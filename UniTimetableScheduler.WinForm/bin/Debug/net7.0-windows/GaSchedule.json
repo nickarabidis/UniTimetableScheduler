@@ -1,0 +1,865 @@
+[
+	{
+		"prof": {
+			"id": 1,
+			"name": "Teacher 1",
+			"category": "Monimos"
+		}
+	},
+	{
+		"prof": {
+			"id": 2,
+			"name": "Teacher 2",
+			"category": "Monimos"
+		}
+	},
+	{
+		"prof": {
+			"id": 3,
+			"name": "Teacher 3",
+			"category": "Monimos"
+		}
+	},
+	{
+		"prof": {
+			"id": 4,
+			"name": "Teacher 4",
+			"category": "Monimos"
+		}
+	},
+	{
+		"prof": {
+			"id": 5,
+			"name": "Teacher 5",
+			"category": "Monimos"
+		}
+	},
+	{
+		"prof": {
+			"id": 6,
+			"name": "Teacher 6",
+			"category": "Monimos"
+		}
+	},
+	{
+		"prof": {
+			"id": 7,
+			"name": "Teacher 7",
+			"category": "Monimos"
+		}
+	},
+	{
+		"prof": {
+			"id": 8,
+			"name": "Teacher 8",
+			"category": "Monimos"
+		}
+	},
+	{
+		"prof": {
+			"id": 9,
+			"name": "Teacher 9",
+			"category": "Monimos"
+		}
+	},
+	{
+		"prof": {
+			"id": 10,
+			"name": "Teacher 10",
+			"category": "Monimos"
+		}
+	},
+	{
+		"prof": {
+			"id": 11,
+			"name": "Teacher 11",
+			"category": "Monimos"
+		}
+	},
+	{
+		"prof": {
+			"id": 12,
+			"name": "Teacher 12",
+			"category": "Ektaktos"
+		}
+	},
+	{
+		"prof": {
+			"id": 13,
+			"name": "Teacher 13",
+			"category": "Ektaktos"
+		}
+	},
+	{
+		"prof": {
+			"id": 14,
+			"name": "Sub-Teacher 1",
+			"category": "Ektaktos"
+		}
+	},
+	{
+		"prof": {
+			"id": 15,
+			"name": "Sub-Teacher 2",
+			"category": "Ektaktos"
+		}
+	},
+	{
+		"prof": {
+			"id": 16,
+			"name": "Sub-Teacher 3",
+			"category": "Ektaktos"
+		}
+	},
+	{
+		"prof": {
+			"id": 17,
+			"name": "Sub-Teacher 4",
+			"category": "Ektaktos"
+		}
+	},
+	{
+		"prof": {
+			"id": 18,
+			"name": "Sub-Teacher 5",
+			"category": "Ektaktos"
+		}
+	},
+	{
+		"prof": {
+			"id": 19,
+			"name": "Sub-Teacher 6",
+			"category": "Ektaktos"
+		}
+	},
+	{
+		"prof": {
+			"id": 20,
+			"name": "Sub-Teacher 7",
+			"category": "Ektaktos"
+		}
+	},
+	{
+		"prof": {
+			"id": 21,
+			"name": "Sub-Teacher 8",
+			"category": "Ektaktos"
+		}
+	},
+	{
+		"prof": {
+			"id": 22,
+			"name": "Sub-Teacher 9",
+			"category": "Ektaktos"
+		}
+	},
+
+
+
+	{
+		"course": {
+			"id": 1,
+			"name": "Discrete Math"
+		}
+	},
+	{
+		"course": {
+			"id": 2,
+			"name": "Introduction to C++ Theory"
+		}
+	},
+	{
+		"course": {
+			"id": 3,
+			"name": "Introduction to C++ Lab"
+		}
+	},
+	{
+		"course": {
+			"id": 4,
+			"name": "Theory of Education"
+		}
+	},
+	{
+		"course": {
+			"id": 5,
+			"name": "Math I"
+		}
+	},
+	{
+		"course": {
+			"id": 6,
+			"name": "Digital Design"
+		}
+	},
+	{
+		"course": {
+			"id": 7,
+			"name": "English Technical Terminology"
+		}
+	},
+
+
+	{
+		"course": {
+			"id": 8,
+			"name": "Object Oriented Programming"
+		}
+	},
+	{
+		"course": {
+			"id": 9,
+			"name": "Scientific Computing Theory"
+		}
+	},
+	{
+		"course": {
+			"id": 10,
+			"name": "Scientific Computing Lab"
+		}
+	},
+	{
+		"course": {
+			"id": 11,
+			"name": "Operating Systems"
+		}
+	},
+	{
+		"course": {
+			"id": 12,
+			"name": "Compilers"
+		}
+	},
+	{
+		"course": {
+			"id": 13,
+			"name": "Advanced Applications of Digital Design Theory"
+		}
+	},
+	{
+		"course": {
+			"id": 14,
+			"name": "Advanced Applications of Digital Design Lab"
+		}
+	},
+	{
+		"course": {
+			"id": 15,
+			"name": "Applied Mathematics"
+		}
+	},
+	{
+		"course": {
+			"id": 16,
+			"name": "Educational Research Methodology"
+		}
+	},
+
+
+	{
+		"course": {
+			"id": 17,
+			"name": "Computer Networks"
+		}
+	},
+	{
+		"course": {
+			"id": 18,
+			"name": "Introduction to Computational Intelligence Theory"
+		}
+	},
+	{
+		"course": {
+			"id": 19,
+			"name": "Introduction to Computational Intelligence Lab"
+		}
+	},
+	{
+		"course": {
+			"id": 20,
+			"name": "Teaching and Applications in Informatics"
+		}
+	},
+	{
+		"course": {
+			"id": 21,
+			"name": "Software Technology I"
+		}
+	},
+	{
+		"course": {
+			"id": 22,
+			"name": "Identify Patterns"
+		}
+	},
+	{
+		"course": {
+			"id": 23,
+			"name": "Neural Networks"
+		}
+	},
+
+
+	{
+		"course": {
+			"id": 24,
+			"name": "Wireless Networks and Mobile Communications"
+		}
+	},
+	{
+		"course": {
+			"id": 25,
+			"name": "Information Security and Privacy"
+		}
+	},
+	{
+		"course": {
+			"id": 26,
+			"name": "Autonomous Animated Robots and Applications"
+		}
+	},
+	{
+		"course": {
+			"id": 27,
+			"name": "Special Database Topics"
+		}
+	},
+	{
+		"course": {
+			"id": 28,
+			"name": "Introduction to Artificial Vision"
+		}
+	},
+	{
+		"course": {
+			"id": 29,
+			"name": "Intelligent Robots Theory"
+		}
+	},
+	{
+		"course": {
+			"id": 30,
+			"name": "Intelligent Robots Lab"
+		}
+	},
+	{
+		"course": {
+			"id": 31,
+			"name": "Programming of the World Wide Web Theory"
+		}
+	},
+	{
+		"course": {
+			"id": 32,
+			"name": "Programming of the World Wide Web Lab"
+		}
+	},
+	{
+		"course": {
+			"id": 33,
+			"name": "Parallel and Distributed Computing"
+		}
+	},
+	{
+		"course": {
+			"id": 34,
+			"name": "Advanced Operating Systems Topics"
+		}
+	},
+
+
+
+
+	{
+		"room": {
+			"id": 1,
+			"name": "AMF",
+			"lab": false
+		}
+	},
+	{
+		"room": {
+			"id": 2,
+			"name": "A1",
+			"lab": false
+		}
+	},
+	{
+		"room": {
+			"id": 3,
+			"name": "A2",
+			"lab": false
+		}
+	},
+	{
+		"room": {
+			"id": 4,
+			"name": "WI",
+			"lab": true
+		}
+	},
+	{
+		"room": {
+			"id": 5,
+			"name": "WII",
+			"lab": true
+		}
+	},
+	{
+		"room": {
+			"id": 6,
+			"name": "ECS",
+			"lab": true
+		}
+	},
+	{
+		"room": {
+			"id": 7,
+			"name": "EHK",
+			"lab": true
+		}
+	},
+	{
+		"room": {
+			"id": 8,
+			"name": "EPYS",
+			"lab": true
+		}
+	},
+	{
+		"room": {
+			"id": 9,
+			"name": "THL",
+			"lab": true
+		}
+	},
+	{
+		"room": {
+			"id": 10,
+			"name": "ROMP",
+			"lab": true
+		}
+	},
+
+
+	{
+		"semester": {
+			"id": 0,
+			"name": "1"
+		}
+	},
+	{
+		"semester": {
+			"id": 1,
+			"name": "3"
+		}
+	},
+	{
+		"semester": {
+			"id": 2,
+			"name": "5"
+		}
+	},
+	{
+		"semester": {
+			"id": 3,
+			"name": "7"
+		}
+	},
+
+
+
+	{
+		"startTime": {
+			"id": 0,
+			"name": "8"
+		}
+	},
+	{
+		"startTime": {
+			"id": 1,
+			"name": "9"
+		}
+	},
+	{
+		"startTime": {
+			"id": 2,
+			"name": "10"
+		}
+	},
+	{
+		"startTime": {
+			"id": 3,
+			"name": "11"
+		}
+	},
+	{
+		"startTime": {
+			"id": 4,
+			"name": "12"
+		}
+	},
+	{
+		"startTime": {
+			"id": 5,
+			"name": "13"
+		}
+	},
+	{
+		"startTime": {
+			"id": 6,
+			"name": "14"
+		}
+	},
+	{
+		"startTime": {
+			"id": 7,
+			"name": "15"
+		}
+	},
+	{
+		"startTime": {
+			"id": 8,
+			"name": "16"
+		}
+	},
+	{
+		"startTime": {
+			"id": 9,
+			"name": "17"
+		}
+	},
+	{
+		"startTime": {
+			"id": 10,
+			"name": "18"
+		}
+	},
+	{
+		"startTime": {
+			"id": 11,
+			"name": "19"
+		}
+	},
+	{
+		"startTime": {
+			"id": 12,
+			"name": "20"
+		}
+	},
+	{
+		"startTime": {
+			"id": 13,
+			"name": "21"
+		}
+	},
+
+
+
+	{
+		"day": {
+			"id": 0,
+			"name": "Monday"
+		}
+	},
+	{
+		"day": {
+			"id": 1,
+			"name": "Tuesday"
+		}
+	},
+	{
+		"day": {
+			"id": 2,
+			"name": "Wednesday"
+		}
+	},
+	{
+		"day": {
+			"id": 3,
+			"name": "Thursday"
+		}
+	},
+	{
+		"day": {
+			"id": 4,
+			"name": "Friday"
+		}
+	},
+
+
+
+
+	
+
+
+	{
+		"class": {
+			"professor": 5,
+			"course": 24,
+			"room": -1,
+			"duration": 3,
+			"semester": 3,
+			"day": -1,
+			"startTime": [ 3, 4, 5, 6, 7, 8, 9, 10, 11 ],
+			"finalDay": -1,
+			"finalStartTime": -1,
+			"finalRoom": -1,
+			"dependency": [ 1 ],
+			"sameDay": true,
+			"differentDay": false,
+			"inHowManyDays": 1
+
+		}
+	},
+	{
+		"class": {
+			"professor": 7,
+			"course": 25,
+			"room": -1,
+			"duration": 3,
+			"semester": 3,
+			"day": -1,
+			"startTime": [ 0, 1, 2, 8, 9, 10, 11 ],
+			"finalDay": -1,
+			"finalStartTime": -1,
+			"finalRoom": -1,
+			"dependency": -1,
+			"sameDay": false,
+			"differentDay": false,
+			"inHowManyDays": -1
+
+		}
+	},
+	{
+		"class": {
+			"professor": 10,
+			"course": 26,
+			"room": 3,
+			"duration": 3,
+			"semester": 3,
+			"day": 3,
+			"startTime": 9,
+			"finalDay": -1,
+			"finalStartTime": -1,
+			"finalRoom": -1,
+			"dependency": -1,
+			"sameDay": false,
+			"differentDay": false,
+			"inHowManyDays": -1
+
+		}
+	},
+	{
+		"class": {
+			"professor": 2,
+			"course": 27,
+			"room": -1,
+			"duration": 3,
+			"semester": 3,
+			"day": -1,
+			"startTime": -1,
+			"finalDay": -1,
+			"finalStartTime": -1,
+			"finalRoom": -1,
+			"dependency": [ 2, 5, 9 ],
+			"sameDay": false,
+			"differentDay": false,
+			"inHowManyDays": 2
+
+		}
+	},
+	{
+		"class": {
+			"professor": 11,
+			"course": 28,
+			"room": 3,
+			"duration": 3,
+			"semester": 3,
+			"day": 1,
+			"startTime": 10,
+			"finalDay": -1,
+			"finalStartTime": -1,
+			"finalRoom": -1,
+			"dependency": -1,
+			"sameDay": false,
+			"differentDay": false,
+			"inHowManyDays": -1
+
+		}
+	},
+	{
+		"class": {
+			"professor": 1,
+			"course": 29,
+			"room": 2,
+			"duration": 3,
+			"semester": 3,
+			"day": 0,
+			"startTime": 7,
+			"finalDay": -1,
+			"finalStartTime": -1,
+			"finalRoom": -1,
+			"dependency": -1,
+			"sameDay": false,
+			"differentDay": false,
+			"inHowManyDays": -1
+
+		}
+	},
+	{
+		"class": {
+			"professor": 21,
+			"course": 30,
+			"room": [ 5, 10 ],
+			"duration": 2,
+			"semester": 3,
+			"day": -1,
+			"startTime": [ 7, 8, 9, 10, 11 ],
+			"lab": true,
+			"finalDay": -1,
+			"finalStartTime": -1,
+			"finalRoom": -1,
+			"dependency": [ 30 ],
+			"sameDay": false,
+			"differentDay": false,
+			"inHowManyDays": 2
+		}
+	},
+	{
+		"class": {
+			"professor": 21,
+			"course": 30,
+			"room": [ 5, 10 ],
+			"duration": 2,
+			"semester": 3,
+			"day": -1,
+			"startTime": [ 7, 8, 9, 10, 11 ],
+			"lab": true,
+			"finalDay": -1,
+			"finalStartTime": -1,
+			"finalRoom": -1,
+			"dependency": [ 30 ],
+			"sameDay": false,
+			"differentDay": false,
+			"inHowManyDays": 2
+		}
+	},
+	{
+		"class": {
+			"professor": 3,
+			"course": 31,
+			"room": 1,
+			"duration": 3,
+			"semester": 3,
+			"day": [ 1, 2 ],
+			"startTime": -1,
+			"finalDay": -1,
+			"finalStartTime": -1,
+			"finalRoom": -1,
+			"dependency": -1,
+			"sameDay": false,
+			"differentDay": false,
+			"inHowManyDays": -1
+
+		}
+	},
+	{
+		"class": {
+			"professor": 22,
+			"course": 32,
+			"room": 8,
+			"duration": 2,
+			"semester": 3,
+			"day": -1,
+			"startTime": [ 7, 8, 9, 10, 11 ],
+			"lab": true,
+			"finalDay": -1,
+			"finalStartTime": -1,
+			"finalRoom": -1,
+			"dependency": [ 32 ],
+			"sameDay": false,
+			"differentDay": false,
+			"inHowManyDays": 2
+
+		}
+	},
+	{
+		"class": {
+			"professor": 22,
+			"course": 32,
+			"room": 8,
+			"duration": 2,
+			"semester": 3,
+			"day": -1,
+			"startTime": [ 7, 8, 9, 10, 11 ],
+			"lab": true,
+			"finalDay": -1,
+			"finalStartTime": -1,
+			"finalRoom": -1,
+			"dependency": [ 32 ],
+			"sameDay": false,
+			"differentDay": false,
+			"inHowManyDays": 2
+
+		}
+	},
+	{
+		"class": {
+			"professor": 4,
+			"course": 33,
+			"room": [ 2, 3 ],
+			"duration": 2,
+			"semester": 3,
+			"day": -1,
+			"startTime": -1,
+			"finalDay": -1,
+			"finalStartTime": -1,
+			"finalRoom": -1,
+			"dependency": [ 11, 12, 33, 34 ],
+			"sameDay": false,
+			"differentDay": true,
+			"inHowManyDays": 5
+
+		}
+	},
+	{
+		"class": {
+			"professor": 4,
+			"course": 33,
+			"room": [ 2, 3 ],
+			"duration": 2,
+			"semester": 3,
+			"day": -1,
+			"startTime": -1,
+			"finalDay": -1,
+			"finalStartTime": -1,
+			"finalRoom": -1,
+			"dependency": [ 11, 12, 33, 34 ],
+			"sameDay": false,
+			"differentDay": true,
+			"inHowManyDays": 5
+
+		}
+	},
+	{
+		"class": {
+			"professor": 4,
+			"course": 34,
+			"room": [ 2, 3 ],
+			"duration": 3,
+			"semester": 3,
+			"day": -1,
+			"startTime": -1,
+			"finalDay": -1,
+			"finalStartTime": -1,
+			"finalRoom": -1,
+			"dependency": [ 11, 12, 33 ],
+			"sameDay": false,
+			"differentDay": true,
+			"inHowManyDays": 5
+
+		}
+	}
+
+]
