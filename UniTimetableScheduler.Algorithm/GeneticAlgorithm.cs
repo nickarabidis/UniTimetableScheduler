@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Security.Cryptography.X509Certificates;
 using Scheduler.Model;
 
 /*
@@ -207,10 +207,9 @@ namespace Scheduler.Algorithm
 			for (; ; )
 			{
 				var best = Result;
-				var status = string.Format("\rFitness: {0:F6}\t Generation: {1}", best.Fitness, currentGeneration++);
-				//FitAndGen(status);
+				//var status = string.Format("\rFitness: {0:F6}\t Generation: {1}", best.Fitness, currentGeneration++);
+				status = string.Format("Generation: {0}", currentGeneration++);
 
-                Console.Write(status);				
 
 				// algorithm has reached criteria?
 				if (best.Fitness > minFitness)
@@ -235,10 +234,13 @@ namespace Scheduler.Algorithm
 			}
 		}
 
-		//public string FitAndGen(string status)
+		//public T FitAndGen(T result)
 		//{
-		//	return status;
+		//	return status = result;
 		//}
+
+		public string status { get; private set; }
+
 
 		public override string ToString()
 		{

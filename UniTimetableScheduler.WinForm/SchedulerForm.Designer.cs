@@ -61,6 +61,7 @@
             totalClassesLabel = new Label();
             addButton = new Button();
             generatedSchedulerButton = new Button();
+            fitAndGenValueLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)schedulerDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)schedulerErrorProvider).BeginInit();
             SuspendLayout();
@@ -197,7 +198,6 @@
             schedulerSemesterComboBox.Name = "schedulerSemesterComboBox";
             schedulerSemesterComboBox.Size = new Size(116, 25);
             schedulerSemesterComboBox.TabIndex = 22;
-            schedulerSemesterComboBox.TextChanged += semesterComboBox_TextChanged;
             // 
             // totalCoursesLabel
             // 
@@ -283,7 +283,7 @@
             // generateButton
             // 
             generateButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            generateButton.Location = new Point(273, 583);
+            generateButton.Location = new Point(271, 583);
             generateButton.Margin = new Padding(4);
             generateButton.Name = "generateButton";
             generateButton.Size = new Size(104, 34);
@@ -366,12 +366,23 @@
             generatedSchedulerButton.UseVisualStyleBackColor = true;
             generatedSchedulerButton.Click += generatedSchedulerButton_Click;
             // 
+            // fitAndGenValueLabel
+            // 
+            fitAndGenValueLabel.AutoSize = true;
+            fitAndGenValueLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            fitAndGenValueLabel.Location = new Point(25, 583);
+            fitAndGenValueLabel.Margin = new Padding(4, 0, 4, 0);
+            fitAndGenValueLabel.Name = "fitAndGenValueLabel";
+            fitAndGenValueLabel.Size = new Size(0, 15);
+            fitAndGenValueLabel.TabIndex = 70;
+            // 
             // SchedulerForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(682, 630);
+            Controls.Add(fitAndGenValueLabel);
             Controls.Add(generatedSchedulerButton);
             Controls.Add(addButton);
             Controls.Add(totalClassValueLabel);
@@ -440,5 +451,6 @@
         private DataGridViewTextBoxColumn dgSemester;
         private Button addButton;
         private Button generatedSchedulerButton;
+        private Label fitAndGenValueLabel;
     }
 }

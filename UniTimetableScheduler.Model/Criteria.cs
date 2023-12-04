@@ -6,6 +6,8 @@ namespace Scheduler.Model
 {
     public class Criteria
     {
+        //Commented Code for classes in same semester to not have more than one class at the same time, day, semester
+
         //internal static bool IsSemesterOverlapped(List<CourseClass>[] slots, Reservation reservation, int dur)
         //{
         //    // check for semester overlapping of classes

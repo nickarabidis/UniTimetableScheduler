@@ -48,9 +48,6 @@ namespace Scheduler.Model
 				// copy fitness
 				Fitness = c.Fitness;
 				
-				if(c.ConvertedObjectives != null)
-					ConvertedObjectives = c.ConvertedObjectives.ToArray();
-				
 				Configuration = c.Configuration;
 				return this;
 			}
@@ -255,33 +252,6 @@ namespace Scheduler.Model
 		}
 
 
-
-        public Schedule MakeEmptyFromPrototype(List<int> bounds)
-		{
-			// make new chromosome, copy chromosome setup
-			var newChromosome = Copy(this, true);
-
-            var c = Configuration.CourseClasses;
-            int nr = Configuration.NumberOfRooms;
-			foreach (var courseClass in c)
-			{
-				// determine random position of class
-				int dur = courseClass.Duration;
-
-				if (bounds != null)
-				{
-					bounds.Add(Constant.DAYS_NUM - 1);
-					bounds.Add(nr - 1);
-					bounds.Add(Constant.DAY_HOURS - 1 - dur);
-				}
-
-				// insert in class table of chromosome
-				newChromosome.Classes[courseClass] = -1;
-			}
-
-			return newChromosome;
-		}
-
 		// Performes crossover operation using to chromosomes and returns pointer to offspring
 		public Schedule Crossover(Schedule parent2, int numberOfCrossoverPoints, float crossoverProbability)
 		{
@@ -349,70 +319,6 @@ namespace Scheduler.Model
 			return n;
 		}
 		
-		// Performes crossover operation using to chromosomes and returns pointer to offspring
-		public Schedule Crossover(Schedule parent, Schedule r1, Schedule r2, Schedule r3, float etaCross, float crossoverProbability)
-		{
-			// number of classes
-			var size = Classes.Count;
-			var jrand = Configuration.Rand(size);
-			
-			// new chromosome object, copy chromosome setup
-			var n = Copy(this, true);
-			
-			var nsemester = Configuration.NumberOfSemesters;
-			for (int i = 0; i < size; ++i)
-			{
-				// check probability of crossover operation
-				if (Configuration.Rand() % 100 > crossoverProbability || i == jrand) {
-					var courseClass = Classes.Keys.ElementAt(i);
-					var reservation1 = Reservation.GetReservation(r1.Classes[courseClass]);
-					var reservation2 = Reservation.GetReservation(r2.Classes[courseClass]);
-					var reservation3 = Reservation.GetReservation(r3.Classes[courseClass]);
-					
-					// determine random position of class				
-					int dur = courseClass.Duration;
-					int day = (int) (reservation3.Day + etaCross * (reservation1.Day - reservation2.Day));
-					if(day < 0)
-						day = 0;
-					else if(day >= Constant.DAYS_NUM)
-						day = Constant.DAYS_NUM - 1;
-					
-					int semester = (int) (reservation3.Semester + etaCross * (reservation1.Semester - reservation2.Semester));
-					if(semester < 0)
-                        semester = 0;
-					else if(semester >= nsemester)
-                        semester = nsemester - 1;
-					
-					int time = (int) (reservation3.Time + etaCross * (reservation1.Time - reservation2.Time));
-					if(time < 0)
-						time = 0;
-					else if(time >= (Constant.DAY_HOURS - dur))
-						time = Constant.DAY_HOURS - 1 - dur;
-
-					var reservation = Reservation.GetReservation(nsemester, day, time, semester);
-
-					// fill time-space slots, for each hour of class
-					for (int j = courseClass.Duration - 1; j >= 0; --j)
-						n.Slots[reservation.GetHashCode() + j].Add(courseClass);
-
-					// insert in class table of chromosome
-					n.Classes[courseClass] = reservation.GetHashCode();
-				} else {
-					var courseClass = parent.Classes.Keys.ElementAt(i);
-					var reservation = parent.Classes[courseClass];
-					// insert class from second parent into new chromosome's class table
-					n.Classes[courseClass] = reservation;
-					// all time-space slots of class are copied
-					for (int j = courseClass.Duration - 1; j >= 0; --j)
-						n.Slots[reservation.GetHashCode() + j].Add(courseClass);
-				}
-			}			
-
-			n.CalculateFitness();
-
-			// return smart pointer to offspring
-			return n;
-		}
 
 		private void Repair(CourseClass cc1, int reservation1_index, Reservation reservation2)
 		{
@@ -694,83 +600,8 @@ namespace Scheduler.Model
 
 		// Return reference to array of time-space slots
 		public List<CourseClass>[] Slots { get; private set; }
-
-		public float Diversity { get; set; }
-
-		public int Rank { get; set; }
-
-		public int GetDifference(Schedule other)
-		{
-			int val = 0;
-			for (int i = 0; i < Criteria.Length && i < other.Criteria.Length; ++i)
-			{
-				if (Criteria[i] ^ other.Criteria[i])
-					++val;
-			}
-			return val;
-		}
-		
-		public void ExtractPositions(float[] positions)
-		{
-			int i = 0;
-			foreach (var cc in Classes.Keys)
-			{
-				var reservation = Reservation.GetReservation(Classes[cc]);
-				positions[i++] = reservation.Day;
-				positions[i++] = reservation.Semester;
-				positions[i++] = reservation.Time;
-			}
-		}
-
-		public void UpdatePositions(float[] positions)
-		{
-			int nr = Configuration.NumberOfRooms;
-			int i = 0;
-			var classes = Classes.Keys.ToArray();
-			foreach (var cc in classes)
-			{
-				int dur = cc.Duration;
-				int day = Math.Abs((int) positions[i] % Constant.DAYS_NUM);			
-				int room = Math.Abs((int) positions[i + 1] % nr);			
-				int time = Math.Abs((int) positions[i + 2] % (Constant.DAY_HOURS - cc.Duration));
-
-				var reservation2 = Reservation.GetReservation(nr, day, time, room);
-				Repair(cc, Classes[cc], reservation2);
-
-				positions[i++] = reservation2.Day;
-				positions[i++] = reservation2.Semester;
-				positions[i++] = reservation2.Time;
-			}
-
-			CalculateFitness();
-		}
-		
-		public double[] ConvertedObjectives { get; private set; }
-		
-		public void ResizeConvertedObjectives(int numObj) {
-			ConvertedObjectives = new double[numObj];
-		}
 		
 		public double[] Objectives { get; private set; }
-
-		public Schedule Clone()
-        {
-			return Copy(this, false);
-        }
-
-        public bool Dominates(Schedule other)
-        {
-            var better = false;
-            for (int f = 0; f < Objectives.Length; ++f)
-            {
-                if (Objectives[f] > other.Objectives[f])
-                    return false;
-
-                if (Objectives[f] < other.Objectives[f])
-                    better = true;
-            }
-            return better;
-        }
 
     }
 }

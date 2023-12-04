@@ -9,6 +9,7 @@ F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Al
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Algorithm\obj\Debug\net7.0\UniTimetableScheduler.Algorithm.AssemblyInfoInputs.cache
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Algorithm\obj\Debug\net7.0\UniTimetableScheduler.Algorithm.AssemblyInfo.cs
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Algorithm\obj\Debug\net7.0\UniTimetableScheduler.Algorithm.csproj.CoreCompileInputs.cache
+F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Algorithm\obj\Debug\net7.0\UniTimetableScheduler.Algorithm.sourcelink.json
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Algorithm\obj\Debug\net7.0\UniTimetableScheduler.Algorithm.csproj.CopyComplete
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Algorithm\obj\Debug\net7.0\UniTimetableScheduler.Algorithm.dll
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Algorithm\obj\Debug\net7.0\refint\UniTimetableScheduler.Algorithm.dll

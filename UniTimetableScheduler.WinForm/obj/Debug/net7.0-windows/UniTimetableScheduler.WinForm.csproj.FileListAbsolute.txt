@@ -37,6 +37,7 @@ F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Wi
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.WinForm\obj\Debug\net7.0-windows\UniTimetableScheduler.WinForm.AssemblyInfoInputs.cache
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.WinForm\obj\Debug\net7.0-windows\UniTimetableScheduler.WinForm.AssemblyInfo.cs
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.WinForm\obj\Debug\net7.0-windows\UniTimetableScheduler.WinForm.csproj.CoreCompileInputs.cache
+F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.WinForm\obj\Debug\net7.0-windows\UniTimetableScheduler.WinForm.sourcelink.json
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.WinForm\obj\Debug\net7.0-windows\UniTimetableScheduler.WinForm.csproj.CopyComplete
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.WinForm\obj\Debug\net7.0-windows\UniTimetableScheduler.WinForm.dll
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.WinForm\obj\Debug\net7.0-windows\refint\UniTimetableScheduler.WinForm.dll

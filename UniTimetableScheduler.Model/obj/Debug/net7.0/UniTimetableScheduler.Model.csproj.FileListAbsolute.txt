@@ -7,6 +7,7 @@ F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Mo
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Model\obj\Debug\net7.0\UniTimetableScheduler.Model.AssemblyInfoInputs.cache
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Model\obj\Debug\net7.0\UniTimetableScheduler.Model.AssemblyInfo.cs
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Model\obj\Debug\net7.0\UniTimetableScheduler.Model.csproj.CoreCompileInputs.cache
+F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Model\obj\Debug\net7.0\UniTimetableScheduler.Model.sourcelink.json
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Model\obj\Debug\net7.0\UniTimetableScheduler.Model.dll
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Model\obj\Debug\net7.0\refint\UniTimetableScheduler.Model.dll
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.Model\obj\Debug\net7.0\UniTimetableScheduler.Model.pdb

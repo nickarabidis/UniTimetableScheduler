@@ -31,6 +31,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeneratedScheduleForm));
             generatedSchedulerDataGridView = new DataGridView();
+            headerTextLabel = new Label();
             dgGeneratedSchedulerId = new DataGridViewTextBoxColumn();
             dgGeneratedCourse = new DataGridViewTextBoxColumn();
             dgGeneratedProfessor = new DataGridViewTextBoxColumn();
@@ -56,18 +57,29 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             generatedSchedulerDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
-            generatedSchedulerDataGridView.Location = new Point(33, 41);
+            generatedSchedulerDataGridView.Location = new Point(33, 38);
             generatedSchedulerDataGridView.Margin = new Padding(4);
             generatedSchedulerDataGridView.Name = "generatedSchedulerDataGridView";
             generatedSchedulerDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            generatedSchedulerDataGridView.Size = new Size(898, 440);
+            generatedSchedulerDataGridView.Size = new Size(900, 490);
             generatedSchedulerDataGridView.TabIndex = 16;
+            // 
+            // headerTextLabel
+            // 
+            headerTextLabel.AutoSize = true;
+            headerTextLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            headerTextLabel.Location = new Point(387, 9);
+            headerTextLabel.Margin = new Padding(4, 0, 4, 0);
+            headerTextLabel.Name = "headerTextLabel";
+            headerTextLabel.Size = new Size(188, 25);
+            headerTextLabel.TabIndex = 17;
+            headerTextLabel.Text = "Generated Schedule:";
             // 
             // dgGeneratedSchedulerId
             // 
             dgGeneratedSchedulerId.HeaderText = "Scheduler Id";
             dgGeneratedSchedulerId.Name = "dgGeneratedSchedulerId";
-            dgGeneratedSchedulerId.Width = 110;
+            dgGeneratedSchedulerId.Width = 80;
             // 
             // dgGeneratedCourse
             // 
@@ -97,7 +109,7 @@
             // 
             dgGeneratedFinalDay.HeaderText = "Final Day";
             dgGeneratedFinalDay.Name = "dgGeneratedFinalDay";
-            dgGeneratedFinalDay.Width = 70;
+            dgGeneratedFinalDay.Width = 80;
             // 
             // dgGeneratedFinalStartTime
             // 
@@ -116,7 +128,8 @@
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(969, 510);
+            ClientSize = new Size(969, 542);
+            Controls.Add(headerTextLabel);
             Controls.Add(generatedSchedulerDataGridView);
             Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = Color.DarkBlue;
@@ -126,11 +139,13 @@
             Load += GeneratedScheduleForm_Load;
             ((System.ComponentModel.ISupportInitialize)generatedSchedulerDataGridView).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private DataGridView generatedSchedulerDataGridView;
+        private Label headerTextLabel;
         private DataGridViewTextBoxColumn dgGeneratedSchedulerId;
         private DataGridViewTextBoxColumn dgGeneratedCourse;
         private DataGridViewTextBoxColumn dgGeneratedProfessor;
