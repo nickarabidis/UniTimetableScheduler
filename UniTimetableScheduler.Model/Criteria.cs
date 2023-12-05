@@ -83,7 +83,7 @@ namespace Scheduler.Model
             return new bool[] { po, go };
         }
 
-        public static bool IsOverlappedCategoryProf(List<CourseClass>[] slots, CourseClass cc, int day, int time)
+        public static bool IsOverlappedMeetingProf(List<CourseClass>[] slots, CourseClass cc, int day, int time)
         {
             bool to = false;
             int dur = cc.Duration;

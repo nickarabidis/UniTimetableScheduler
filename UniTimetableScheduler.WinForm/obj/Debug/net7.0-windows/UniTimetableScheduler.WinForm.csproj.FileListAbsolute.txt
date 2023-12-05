@@ -1,4 +1,3 @@
-F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.WinForm\bin\Debug\net7.0-windows\GaSchedule.json
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.WinForm\bin\Debug\net7.0-windows\UniTimetableScheduler.WinForm.exe
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.WinForm\bin\Debug\net7.0-windows\UniTimetableScheduler.WinForm.deps.json
 F:\PROJECTS\UniTimetableScheduler\UniTimetableScheduler\UniTimetableScheduler.WinForm\bin\Debug\net7.0-windows\UniTimetableScheduler.WinForm.runtimeconfig.json

@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Data.SQLite;
-using System.IO;
 using System.Linq;
-using System.Runtime.Intrinsics.Arm;
-using System.Text.Json;
-using System.Xml.Linq;
+
 
 namespace Scheduler.Model
 {
-	// Reads configration file and stores parsed objects
 	public class Configuration
     {
         // Parsed professors
@@ -18,13 +13,6 @@ namespace Scheduler.Model
 
         // Parsed courses
         private readonly Dictionary<int, Course> _courses;
-
-
-
-        // Parsed student groups
-        //private readonly Dictionary<int, StudentsGroup> _studentGroups;
-
-
 
         // Parsed rooms
         private readonly Dictionary<int, Room> _rooms;
@@ -50,7 +38,6 @@ namespace Scheduler.Model
             Empty = true;
             _professors = new();
             _courses = new();
-            //_studentGroups = new();
             _rooms = new();
             _semesters = new();
             _days = new();
@@ -70,18 +57,7 @@ namespace Scheduler.Model
 
         // Returns number of parsed professors
         public int NumberOfProfessors => _professors.Count;
-
-        // Returns student group with specified ID
-        // If there is no student group with such ID method returns NULL
-        //StudentsGroup GetStudentsGroupById(int id)
-        //{
-        //	if (!_studentGroups.ContainsKey(id))
-        //		return null;
-        //	return _studentGroups[id];
-        //}
-
-        // Returns number of parsed student groups
-        //public int NumberOfStudentGroups => _studentGroups.Count;
+        
 
         // Returns course with specified ID
         // If there is no course with such ID method returns NULL
@@ -274,7 +250,7 @@ namespace Scheduler.Model
         //}
 
         // Returns number of parsed dependencies
-        public int NumberOfDependencies => _courses.Count;
+        //public int NumberOfDependencies => _courses.Count;
 
         // Returns reference to list of parsed classes
         public List<CourseClass> CourseClasses { get; }
@@ -330,17 +306,6 @@ namespace Scheduler.Model
             long courseIdAsLong = (long)data["CourseID"];
             int id = Convert.ToInt32(courseIdAsLong);
 
-            //int id = 0;
-            //if (data["CourseID"] is long)
-            //{
-            //    id = (int)data["CourseID"];
-            //}
-            //else if (data["CourseID"] is int)
-            //{
-            //    id = (int)data["CourseID"];
-            //}
-            //int id = (int)data["CourseID"];
-
             if (!data.ContainsKey("Name"))
                 return null;
             string name = (string)data["Name"];
@@ -356,15 +321,6 @@ namespace Scheduler.Model
                 return null;
             long professorIdAsLong = (long)data["ProfessorID"];
             int id = Convert.ToInt32(professorIdAsLong);
-            //int id = 0;
-            //if (data["ProfessorID"] is long)
-            //{
-            //    id = (int)data["ProfessorID"];
-            //}
-            //else if (data["ProfessorID"] is int)
-            //{
-            //    id = (int)data["ProfessorID"];
-            //}
 
             if (!data.ContainsKey("Name"))
                 return null;
@@ -385,15 +341,6 @@ namespace Scheduler.Model
                 return null;
             long semesterIdAsLong = (long)data["SemesterID"];
             int id = Convert.ToInt32(semesterIdAsLong);
-            //int id = 0;
-            //if (data["SemesterID"] is long)
-            //{
-            //    id = (int)data["SemesterID"];
-            //}
-            //else if (data["SemesterID"] is int)
-            //{
-            //    id = (int)data["SemesterID"];
-            //}
 
             if (!data.ContainsKey("Name"))
                 return null;
@@ -410,15 +357,6 @@ namespace Scheduler.Model
                 return null;
             long dayIdAsLong = (long)data["DayID"];
             int id = Convert.ToInt32(dayIdAsLong);
-            //int id = 0;
-            //if (data["DayID"] is long)
-            //{
-            //    id = (int)data["DayID"];
-            //}
-            //else if (data["DayID"] is int)
-            //{
-            //    id = (int)data["DayID"];
-            //}
 
             if (!data.ContainsKey("Name"))
                 return null;
@@ -435,15 +373,6 @@ namespace Scheduler.Model
                 return null;
             long startTimeIdAsLong = (long)data["StartTimeID"];
             int id = Convert.ToInt32(startTimeIdAsLong);
-            //int id = 0;
-            //if (data["StartTimeID"] is long)
-            //{
-            //    id = (int)data["StartTimeID"];
-            //}
-            //else if (data["StartTimeID"] is int)
-            //{
-            //    id = (int)data["StartTimeID"];
-            //}
 
             if (!data.ContainsKey("Name"))
                 return null;
@@ -460,15 +389,6 @@ namespace Scheduler.Model
                 return null;
             long roomIdAsLong = (long)data["RoomID"];
             int id = Convert.ToInt32(roomIdAsLong);
-            //int id = 0;
-            //if (data["RoomID"] is long)
-            //{
-            //    id = (int)data["RoomID"];
-            //}
-            //else if (data["RoomID"] is int)
-            //{
-            //    id = (int)data["RoomID"];
-            //}
 
             if (!data.ContainsKey("Name"))
                 return null;
@@ -520,7 +440,6 @@ namespace Scheduler.Model
             int semesters = 0;
             bool lab = false;
 
-            //var groups = new List<StudentsGroup>();
 
             var room_list = new List<Room>();
             var day_list = new List<Day>();
@@ -600,60 +519,12 @@ namespace Scheduler.Model
                     case "FinalStartTime":
                         GetMember(data, key, ref finalStartTimes);
                         break;
-                        //case "Day":
-                        //    var days = GetListsForClass(con, "DayID", id);
-                        //    foreach (var day in days)
-                        //    {
-                        //        var d = GetDayById(day);
-                        //        if (d != null)
-                        //            day_list.Add(d);
-                        //    }
-                        //    break;
-                        //case "StartTime":
-                        //    var startTimes = GetListsForClass(con, "StartTimeID", id);
-                        //    foreach (var startTime in startTimes)
-                        //    {
-                        //        var st = GetStartTimeById(startTime);
-                        //        if (st != null)
-                        //            startTime_list.Add(st);
-                        //    }
-                        //    break;
-                        //case "Room":
-                        //    var rooms = GetListsForClass(con, "RoomID", id);
-                        //    foreach (var room in rooms)
-                        //    {
-                        //        var r = GetRoomById(room);
-                        //        if (r != null)
-                        //            room_list.Add(r);
-                        //    }
-                        //    break;
-                        //case "Dependency":
-                        //    var dependencies = GetListsForClass(con, "Dependency", id);
-                        //    foreach (var dependency in dependencies)
-                        //    {
-                        //        var dp = GetDependencyById(dependency);
-                        //        if (dp != null)
-                        //            dependency_list.Add(dp);
-                        //    }
-                        //    break;
-
-                        //case "SameDay":
-                        //    GetMember(data, key, ref sameDay);
-                        //    break;
-                        //case "DifferentDay":
-                        //    GetMember(data, key, ref differentDay);
-                        //    break;
-                        //case "InHowManyDays":
-                        //    GetMember(data, key, ref inHowManyDays);
-                        //    break;
+                        
 
                 }
-
-
-
             }
 
-            // get professor who teaches class and course and semester to which this class belongs
+            // get professor, course, semester to which this class belongs
             Professor prof = GetProfessorById(pid);
             Course course = GetCourseById(cid);
             Semester semester = GetSemesterById(semesters);
@@ -661,7 +532,7 @@ namespace Scheduler.Model
             StartTime finalStartTime = GetStartTimeById(finalStartTimes);
             Room finalRoom = GetRoomById(finalRooms);
 
-            // does professor and class exists
+            // if course and prof doesnt exist then return null
             if (course == null || prof == null)
                 return null;
 
@@ -784,52 +655,6 @@ namespace Scheduler.Model
         }
 
 
-        //public List<int> GetListsForClass(SQLiteConnection con, string attribute, string table, int classId)
-        //{
-        //    List<int> attributeList = new List<int>();
-
-        //    using (var cmd = new SQLiteCommand(con))
-        //    {
-        //        cmd.CommandText = $"SELECT {attribute} FROM {table} WHERE SchedulerID = @ClassID";
-        //        cmd.Parameters.AddWithValue("@ClassID", classId);
-
-        //        using (var reader = cmd.ExecuteReader())
-        //        {
-        //            while (reader.Read())
-        //            {
-        //                int attributeValue = reader.GetInt32(0); // Assuming the attribute is in the first column
-        //                attributeList.Add(attributeValue);
-        //            }
-        //        }
-        //    }
-
-        //    return attributeList;
-        //}
-
-        //public List<int> GetDaysForClass(SQLiteConnection con, int classId)
-        //{
-        //    //SQLiteConnection con = Database.GetConnection();
-        //    List<int> dayList = new List<int>();
-
-        //    // Assume that con is your SQLite connection object
-        //    using (var cmd = new SQLiteCommand(con))
-        //    {
-        //        cmd.CommandText = "SELECT Day FROM Scheduler WHERE ID = @ClassID";
-        //        cmd.Parameters.AddWithValue("@ClassID", classId);
-
-        //        using (var reader = cmd.ExecuteReader())
-        //        {
-        //            while (reader.Read())
-        //            {
-        //                int dayId = reader.GetInt32(0); // Assuming the DayID is in the first column
-        //                dayList.Add(dayId);
-        //            }
-        //        }
-        //    }
-
-        //    return dayList;
-        //}
-
         // Parse database and store parsed object
         public void ParseDatabase(SQLiteConnection con)
         {
@@ -941,32 +766,32 @@ namespace Scheduler.Model
         {
             return _random.Next(0, 32767);
         }
-        public static double Random()
-        {
-            return _random.NextDouble();
-        }
+        //public static double Random()
+        //{
+        //    return _random.NextDouble();
+        //}
 
-        public static int Rand(int size)
-        {
-            return _random.Next(size);
-        }
+        //public static int Rand(int size)
+        //{
+        //    return _random.Next(size);
+        //}
 
-        public static int Rand(int min, int max)
-        {
-            return min + Rand(max - min + 1);
-        }
+        //public static int Rand(int min, int max)
+        //{
+        //    return min + Rand(max - min + 1);
+        //}
 
-        public static double Rand(double min, double max)
-        {
-            return min + _random.NextDouble() * (max - min);
-        }
+        //public static double Rand(double min, double max)
+        //{
+        //    return min + _random.NextDouble() * (max - min);
+        //}
 
-        public static double NextGaussian()
-        {
-            var u1 = 1.0 - _random.NextDouble(); //uniform(0,1] random doubles
-            var u2 = 1.0 - _random.NextDouble();
-            return Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Sin(2.0 * Math.PI * u2); //random normal(0,1)
-        }
+        //public static double NextGaussian()
+        //{
+        //    var u1 = 1.0 - _random.NextDouble(); //uniform(0,1] random doubles
+        //    var u2 = 1.0 - _random.NextDouble();
+        //    return Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Sin(2.0 * Math.PI * u2); //random normal(0,1)
+        //}
 
         public static void Seed()
         {

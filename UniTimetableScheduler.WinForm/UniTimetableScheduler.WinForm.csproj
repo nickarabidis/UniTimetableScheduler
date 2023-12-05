@@ -17,10 +17,4 @@
     <ProjectReference Include="..\UniTimetableScheduler.Model\UniTimetableScheduler.Model.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="GaSchedule.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>

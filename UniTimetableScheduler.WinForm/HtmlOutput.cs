@@ -11,13 +11,12 @@ namespace Scheduler.WinForm
         private const int SEMESTER_COLUMN_NUMBER = Constant.DAYS_NUM + 1;
         private const int SEMESTER_ROW_NUMBER = Constant.DAY_HOURS + 1;
 
-        private const string COLOR1 = "#319378";
-        private const string COLOR2 = "#CE0000";
+        //private const string COLOR1 = "#319378";
+        //private const string COLOR2 = "#CE0000";
 
-        private static string[] CRITERIAS = { "S" };
         //private static string[] CRITERIAS = { "S", "P", "R", "T", "F", "C", "DD", "DH" };
-        private static string[] CRITERIAS_DESCR = { "Class per semester has {0} overlapping", "Professors have {0} overlapping", "Rooms have {0} overlapping",
-            "If Monimos it is {0}t in 10-12 timeSlot", "Theres at least {0} free timeslot from 12-16", "Theres at least {0} class every day", "Dependencies are{0} in same or different day", "Dependencies are{0} in that many days" };
+        //private static string[] CRITERIAS_DESCR = { "Class per semester has {0} overlapping", "Professors have {0} overlapping", "Rooms have {0} overlapping",
+        //    "If Monimos it is {0}t in 10-12 timeSlot", "Theres at least {0} free timeslot from 12-16", "Theres at least {0} class every day", "Dependencies are{0} in same or different day", "Dependencies are{0} in that many days" };
         private static string[] PERIODS = { "", "8:00 - 9:00", "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00", "20:00 - 21:00", "21:00 - 22:00" };
         private static string[] WEEK_DAYS = { "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY" };
 
@@ -82,7 +81,7 @@ namespace Scheduler.WinForm
                     semesterSchedule = new string[SEMESTER_COLUMN_NUMBER];
                     timeTable[key] = semesterSchedule;
                 }
-                sb.Append(cc.Course.Name).Append("<br />").Append(cc.Professor.Name).Append("<br />").Append("Room: ").Append(cc.FinalRooms.Name).Append("<br />").Append("Duration: ").Append(cc.Duration).Append("<br />");
+                sb.Append(cc.Course.Name).Append("<br />").Append(cc.Professor.Name).Append("<br />").Append("Room: ").Append(cc.FinalRooms.Name).Append("<br />").Append("Duration: ").Append(cc.Duration + " hours").Append("<br />");
                 //sb.Append(string.Join("/", cc.Groups.Select(grp => grp.Name).ToArray()));
                 //if (cc.LabRequired)
                 //    sb.Append("Lab<br />");

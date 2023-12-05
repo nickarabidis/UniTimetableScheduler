@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
 using Scheduler.Model;
 
-/*
- * Lakshmi, R. et al. “A New Biological Operator in Genetic Algorithm for Class Scheduling Problem.” 
- * International Journal of Computer Applications 60 (2012): 6-11.
- * Copyright (c) 2020 - 2022 Miller Cy Chan
- */
 
 namespace Scheduler.Algorithm
 {
@@ -68,15 +62,17 @@ namespace Scheduler.Algorithm
 			ReplaceByGeneration = replaceByGeneration;
 		}
 
-		public GeneticAlgorithm(T prototype, int numberOfCrossoverPoints = 2, int mutationSize = 4, float crossoverProbability = 80, float mutationProbability = 3) : this(prototype, 200, 8, 5)
+        // Constructor for creating GeneticAlgorithm with default parameters
+        public GeneticAlgorithm(T prototype, int numberOfCrossoverPoints = 2, int mutationSize = 4, float crossoverProbability = 80, float mutationProbability = 3) : this(prototype, 200, 8, 5)
 		{			
 			_mutationSize = mutationSize;
 			_numberOfCrossoverPoints = numberOfCrossoverPoints;
 			_crossoverProbability = crossoverProbability;
 			_mutationProbability = mutationProbability;
 		}
-		
-		private int ReplaceByGeneration
+
+        // Setter for ReplaceByGeneration property
+        private int ReplaceByGeneration
         {
 			set
             {
@@ -94,8 +90,7 @@ namespace Scheduler.Algorithm
         // Tries to add chromosomes in best chromosome group
         private void AddToBest(int chromosomeIndex)
         {
-			// don't add if new chromosome hasn't fitness big enough for best chromosome group
-			// or it is already in the group?
+			// don't add if new chromosome hasn't fitness big enough for best chromosome group or it is already in the group
 			if ((_currentBestSize == _bestChromosomes.Length &&
 				_chromosomes[_bestChromosomes[_currentBestSize - 1]].Fitness >=
 				_chromosomes[chromosomeIndex].Fitness) || _bestFlags[chromosomeIndex])
@@ -152,7 +147,8 @@ namespace Scheduler.Algorithm
 			}
 		}
 
-		protected T[] Selection(T[] population)
+        // Selects parents randomly
+        protected T[] Selection(T[] population)
         {
 			// selects parent randomly
 			var p1 = population[Configuration.Rand() % population.Length];
@@ -160,7 +156,8 @@ namespace Scheduler.Algorithm
 			return new T[] { p1, p2 };
 		}
 
-		protected T[] Replacement(T[] population)
+        // Produces offspring and replaces some chromosomes in the population
+        protected T[] Replacement(T[] population)
         {
 			// produce offspring
 			var offspring = new T[_replaceByGeneration];
@@ -234,12 +231,13 @@ namespace Scheduler.Algorithm
 			}
 		}
 
-		//public T FitAndGen(T result)
-		//{
-		//	return status = result;
-		//}
+        //public T FitAndGen(T result)
+        //{
+        //	return status = result;
+        //}
 
-		public string status { get; private set; }
+        // Status property to store the current status of the algorithm
+        public string status { get; private set; }
 
 
 		public override string ToString()

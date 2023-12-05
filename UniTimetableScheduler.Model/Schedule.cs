@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Data.SQLite;
 using System.Linq;
-using System.Xml.Linq;
-using static System.Reflection.Metadata.BlobBuilder;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+
 
 namespace Scheduler.Model
 {
@@ -68,11 +63,6 @@ namespace Scheduler.Model
 				// determine random position of class
 				int dur = c.Duration;
 				bool lab = c.LabRequired;
-
-                //int day = Configuration.Rand(0, Constant.DAYS_NUM - 1);
-                //int semester = Configuration.Rand(0, nsemester - 1);
-                //int time = Configuration.Rand(0, (Constant.DAY_HOURS - 1 - dur));
-                
 				
 				int semester = 0;
                 int day = 0;
@@ -86,13 +76,6 @@ namespace Scheduler.Model
                 // assigns day of class or random day
                 if (c.Days is List<Day>)
 				{
-					Console.WriteLine("How many days: " + c.Days.Count);
-                    Console.Write("c.Days: ");
-                    foreach (var dayObj in c.Days)
-                    {
-                        Console.Write(dayObj + " ");
-                    }
-                    Console.WriteLine();
                     if (c.Days.Count > 1)
                     {
                         var random = new Random();
@@ -101,8 +84,6 @@ namespace Scheduler.Model
                         day = randomDay.Id;
 
                         c.FinalDays = randomDay;
-                        //Console.WriteLine("Random day Id: " + day);
-                        //Console.WriteLine("c.FinalDay RandomChoice: " + c.FinalDays);
                     }
                     else
                     {
@@ -112,16 +93,14 @@ namespace Scheduler.Model
                             {
                                 day = dayObj.Id;
                                 c.FinalDays = dayObj;
-                                //Console.WriteLine("c.FinalDay: " + c.FinalDays);
                             }
                         }
                         else
                         {
                             Day randomDay = Configuration.AddRandomDay();
                             day = randomDay.Id;
-                            //Console.WriteLine("day Random: " + day);
+
                             c.FinalDays = randomDay;
-                            //Console.WriteLine("c.FinalDay Random: " + c.FinalDays);
                         }
                     }
                 }
@@ -129,13 +108,6 @@ namespace Scheduler.Model
                 // assigns startTime of class or random startTime
                 if (c.StartTimes is List<StartTime>)
                 {
-                    Console.WriteLine("How many startTimes: " + c.StartTimes.Count);
-                    Console.Write("c.StartTimes: ");
-                    foreach (var startTimeObj in c.StartTimes)
-                    {
-                        Console.Write(startTimeObj + " ");
-                    }
-                    Console.WriteLine();
 
                     if (c.StartTimes.Count > 1)
                     {
@@ -145,8 +117,6 @@ namespace Scheduler.Model
                         startTime = randomStartTime.Id;
 
                         c.FinalStartTimes = randomStartTime;
-                        //Console.WriteLine("Random startTime Id: " + startTime);
-                        //Console.WriteLine("c.FinalStartTimes RandomChoice: " + c.FinalStartTimes);
                     }
                     else
                     {
@@ -156,16 +126,14 @@ namespace Scheduler.Model
                             {
                                 startTime = startTimeObj.Id;
                                 c.FinalStartTimes = startTimeObj;
-                                //Console.WriteLine("c.FinalStartTime: " + c.FinalStartTimes);
                             }
                         }
                         else
                         {
                             StartTime randomStartTime = Configuration.AddRandomStartTime(dur);
                             startTime = randomStartTime.Id;
-                            //Console.WriteLine("startTime Random: " + startTime);
+
                             c.FinalStartTimes = randomStartTime;
-                            //Console.WriteLine("c.FinalStartTime Random: " + c.FinalStartTimes);
                         }
                     }
                 }
@@ -173,14 +141,7 @@ namespace Scheduler.Model
                 // assigns room of class or random room
                 if (c.Rooms is List<Room>)
                 {
-                    Console.WriteLine("How many rooms: " + c.Rooms.Count);
-                    Console.Write("c.Rooms: ");
-                    foreach (var roomObj in c.Rooms)
-                    {
-                        Console.Write(roomObj + " ");
-                    }
-                    Console.WriteLine();
-
+                    
                     if (c.Rooms.Count > 1)
                     {
                         var random = new Random();
@@ -189,8 +150,7 @@ namespace Scheduler.Model
                         room = randomRoom.Id;
 
                         c.FinalRooms = randomRoom;
-                        //Console.WriteLine("Random room Id: " + room);
-                        //Console.WriteLine("c.FinalRoom RandomChoice: " + c.FinalRooms);
+                        
                     }
                     else
                     {
@@ -200,29 +160,24 @@ namespace Scheduler.Model
                             {
                                 room = roomObj.Id;
                                 c.FinalRooms = roomObj;
-                                //Console.WriteLine("room: " + room);
-                                //Console.WriteLine("c.FinalRoom: " + c.FinalRooms);
                             }
                         }
                         else
                         {
-                            //Console.WriteLine("IsLab: " + c.LabRequired);
 
                             if (!c.LabRequired)
                             {
                                 Room randomRoom = Configuration.AddRandomRoomTheory(semester);
                                 room = randomRoom.Id;
-                                //Console.WriteLine("Random Theory Room Id: " + room);
+                                
                                 c.FinalRooms = randomRoom;
-                                //Console.WriteLine("c.FinalRoom Random: " + c.FinalRooms);
                             }
                             else
                             {
                                 Room randomRoom = Configuration.AddRandomRoomLab();
                                 room = randomRoom.Id;
-                                //Console.WriteLine("Random Lab Room Id: " + room);
+
                                 c.FinalRooms = randomRoom;
-                                //Console.WriteLine("c.FinalRoom Random: " + c.FinalRooms);
                             }
                         }
                     }
@@ -322,7 +277,6 @@ namespace Scheduler.Model
 
 		private void Repair(CourseClass cc1, int reservation1_index, Reservation reservation2)
 		{
-            //Console.WriteLine("REPAIR: ");
 
             var dur = cc1.Duration;
             var nsemester = Configuration.NumberOfSemesters;
@@ -338,9 +292,6 @@ namespace Scheduler.Model
 
 			if (reservation2 == null)
 			{
-				//int day = Configuration.Rand(0, Constant.DAYS_NUM - 1);
-				//int semester = Configuration.Rand(0, nsemester - 1);
-				//int time = Configuration.Rand(0, (Constant.DAY_HOURS - 1 - dur));
 
 				int semester = 0;
 				int day = 0;
@@ -511,25 +462,25 @@ namespace Scheduler.Model
 
                 int dur = cc.Duration;
 
-				// check for semester overlapping of classes
+				// check for classes overlapping in the same semester
 				var ro = Model.Criteria.IsSemesterOverlapped(Slots, reservation, dur);
 
 				// on semester overlapping
 				Criteria[ci + 0] = !ro;
 
 
-
-				int timeId = day * daySize + time;
+                // check for classes overlapping of the same professor/room
+                int timeId = day * daySize + time;
 				var total_overlap = Model.Criteria.IsOverlappedProfAndRoom(Slots, cc, numberOfSemesters, timeId);
 
-				// professors have no overlapping classes?
+				// professors have no overlapping classes
 				Criteria[ci + 1] = !total_overlap[0];
 
-				// rooms have no overlapping classes?
+				// rooms have no overlapping classes
 				Criteria[ci + 2] = !total_overlap[1];
 
-				// Check overlapping of classes for type of professors
-				bool to = Model.Criteria.IsOverlappedCategoryProf(Slots, cc, day, time);
+				// Check overlapping of classes for professors with meetings
+				bool to = Model.Criteria.IsOverlappedMeetingProf(Slots, cc, day, time);
 
 				// On typeofProf overlapping
 				Criteria[ci + 3] = !to;

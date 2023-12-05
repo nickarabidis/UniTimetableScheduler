@@ -7,7 +7,7 @@ namespace Scheduler.Model
 {
     public class CourseClass : IComparable<CourseClass>
     {
-        private static int _nextClassId = 0;
+        //private static int _nextClassId = 0;
         // Initializes class object
         public CourseClass(int schedulerId, Professor professor, Course course, bool requiresLab, int duration, Semester semester, Room[] room, Day[] day, StartTime[] startTime, Day finalDay, StartTime finalStartTime, Room finalRoom, int[] dependency, int howManyDays )
         {
@@ -15,7 +15,6 @@ namespace Scheduler.Model
             SchedulerId = schedulerId;
             Professor = professor;
 			Course = course;
-			//NumberOfSeats = 0;
 			LabRequired = requiresLab;
 			Duration = duration;
 			Semester = semester;
@@ -32,14 +31,6 @@ namespace Scheduler.Model
             Professor.AddCourseClass(this);
             // bind semester to class
             Semester.AddCourseClass(this);
-
-            // bind student groups to class
-   //         foreach (StudentsGroup group in groups)
-   //         {
-			//	group.AddClass(this);
-			//	Groups.Add(group);
-			//	NumberOfSeats += group.NumberOfStudents;
-			//}
 
             // bind rooms to class
             foreach (Room r in room)
@@ -59,24 +50,6 @@ namespace Scheduler.Model
                 st.AddCourseClass(this);
                 StartTimes.Add(st);
             }
-            // bind finalDays to class
-            //foreach (Day d in finalDay)
-            //{
-            //    d.AddCourseClass(this);
-            //    FinalDays.Add(d);
-            //}
-            // bind finalStartTimes to class
-            //foreach (StartTime st in finalStartTime)
-            //{
-            //    st.AddCourseClass(this);
-            //    FinalStartTimes.Add(st);
-            //}
-            // bind finalRooms to class
-            //foreach (Room r in finalRoom)
-            //{
-            //    r.AddCourseClass(this);
-            //    FinalRooms.Add(r);
-            //}
             // bind dependencies to class
             foreach (int dp in dependency)
             {
@@ -84,11 +57,6 @@ namespace Scheduler.Model
             }
         }
 
-		// Returns TRUE if another class has one or overlapping student groups.
-		//public bool GroupsOverlap(CourseClass c)
-  //      {
-		//	return Groups.Intersect(c.Groups).Any();
-  //      }
         // Returns TRUE if another class has same semester.
         public bool SemesterOverlaps(CourseClass c)
         {
@@ -122,12 +90,6 @@ namespace Scheduler.Model
 
 		// Return pointer to course to which class belongs
 		public Course Course { get; set; }
-
-		// Returns reference to list of student groups who attend class
-		//public List<StudentsGroup> Groups { get; set; }
-
-		// Returns number of seats (students) required in room
-		public int NumberOfSeats { get; set; }
 
 		// Returns TRUE if class requires computers in room
 		public bool LabRequired { get; set; }
