@@ -59,11 +59,8 @@ Generated Timetable:
 - Shows the generated timetable with html.
 
 ![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/8994995b-a1f5-4365-b7a8-bc1ba7f306ba)
-
 ![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/0981826b-276b-47fc-a8b0-8729b7a3b63c)
-
 ![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/469a4d24-3b5b-490a-9ee0-9ab76c63c1cc)
-
 ![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/ef68b0e3-82f0-46e0-b6f0-153c2941e91e)
 
 ## Licence
