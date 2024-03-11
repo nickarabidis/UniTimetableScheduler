@@ -52,7 +52,7 @@ namespace Scheduler.Model
             bool po = false, go = false;
 
             int dur = cc.Duration;
-            // check overlapping of classes for professors and student groups
+            // check overlapping of classes for professors and rooms
             for (int i = numberOfSemesters; i > 0; --i, timeId += Constant.DAY_HOURS)
             {
                 // for each hour of class

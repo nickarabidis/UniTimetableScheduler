@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UniTimetableScheduler.Model")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+03f4c02dcec12a5da14ab06f7c075def01f8d094")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d66ce69f1e0ee5adced954bb3a37baed660198cd")]
 [assembly: System.Reflection.AssemblyProductAttribute("UniTimetableScheduler.Model")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UniTimetableScheduler.Model")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

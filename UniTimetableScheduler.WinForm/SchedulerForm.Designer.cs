@@ -73,9 +73,9 @@
             schedulerCourseLabel.Location = new Point(146, 66);
             schedulerCourseLabel.Margin = new Padding(4, 0, 4, 0);
             schedulerCourseLabel.Name = "schedulerCourseLabel";
-            schedulerCourseLabel.Size = new Size(52, 17);
+            schedulerCourseLabel.Size = new Size(67, 17);
             schedulerCourseLabel.TabIndex = 3;
-            schedulerCourseLabel.Text = "Course:";
+            schedulerCourseLabel.Text = "Course Id:";
             // 
             // schedulerProfessorLabel
             // 
@@ -84,9 +84,9 @@
             schedulerProfessorLabel.Location = new Point(269, 66);
             schedulerProfessorLabel.Margin = new Padding(4, 0, 4, 0);
             schedulerProfessorLabel.Name = "schedulerProfessorLabel";
-            schedulerProfessorLabel.Size = new Size(67, 17);
+            schedulerProfessorLabel.Size = new Size(82, 17);
             schedulerProfessorLabel.TabIndex = 4;
-            schedulerProfessorLabel.Text = "Professor:";
+            schedulerProfessorLabel.Text = "Professor Id:";
             // 
             // headerTextLabel
             // 
@@ -106,9 +106,9 @@
             schedulerSemesterLabel.Location = new Point(518, 66);
             schedulerSemesterLabel.Margin = new Padding(4, 0, 4, 0);
             schedulerSemesterLabel.Name = "schedulerSemesterLabel";
-            schedulerSemesterLabel.Size = new Size(65, 17);
+            schedulerSemesterLabel.Size = new Size(80, 17);
             schedulerSemesterLabel.TabIndex = 9;
-            schedulerSemesterLabel.Text = "Semester:";
+            schedulerSemesterLabel.Text = "Semester Id:";
             // 
             // schedulerDataGridView
             // 

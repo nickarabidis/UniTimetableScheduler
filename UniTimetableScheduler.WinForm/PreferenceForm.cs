@@ -130,7 +130,7 @@ namespace Scheduler.WinForm
         }
         private bool ifStartTimeExists(SQLiteConnection con, string schedulerId, string startTimeId)
         {
-            SQLiteDataAdapter sda = new SQLiteDataAdapter("Select 1 From [StartTime] WHERE [SchedulerID] = '" + schedulerId + "' AND [StartTimeID] = '" + startTimeId + "' ", con);
+            SQLiteDataAdapter sda = new SQLiteDataAdapter("Select 1 From [StartTimeList] WHERE [SchedulerID] = '" + schedulerId + "' AND [StartTimeID] = '" + startTimeId + "' ", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows.Count > 0)
@@ -144,7 +144,7 @@ namespace Scheduler.WinForm
         }
         private bool ifRoomExists(SQLiteConnection con, string schedulerId, string roomId)
         {
-            SQLiteDataAdapter sda = new SQLiteDataAdapter("Select 1 From [Room] WHERE [SchedulerID] = '" + schedulerId + "' AND [RoomID] = '" + roomId + "' ", con);
+            SQLiteDataAdapter sda = new SQLiteDataAdapter("Select 1 From [RoomList] WHERE [SchedulerID] = '" + schedulerId + "' AND [RoomID] = '" + roomId + "' ", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows.Count > 0)

@@ -52,7 +52,7 @@ namespace Scheduler.Model
 		// Makes new chromosome with same setup but with randomly chosen code
 		public Schedule MakeNewFromPrototype(List<float> positions = null)
 		{
-			// make new chromosome, copy chromosome setup
+			// copy chromosome setup
 			var newChromosome = Copy(this, true);
 
 			// place classes at random position

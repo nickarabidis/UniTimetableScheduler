@@ -55,7 +55,7 @@
             // dependencyClearButton
             // 
             dependencyClearButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dependencyClearButton.Location = new Point(305, 163);
+            dependencyClearButton.Location = new Point(311, 163);
             dependencyClearButton.Name = "dependencyClearButton";
             dependencyClearButton.Size = new Size(100, 35);
             dependencyClearButton.TabIndex = 38;
@@ -66,7 +66,7 @@
             // dependencyDeleteButton
             // 
             dependencyDeleteButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dependencyDeleteButton.Location = new Point(199, 163);
+            dependencyDeleteButton.Location = new Point(205, 163);
             dependencyDeleteButton.Name = "dependencyDeleteButton";
             dependencyDeleteButton.Size = new Size(100, 35);
             dependencyDeleteButton.TabIndex = 37;
@@ -77,7 +77,7 @@
             // dependencyAddButton
             // 
             dependencyAddButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dependencyAddButton.Location = new Point(93, 163);
+            dependencyAddButton.Location = new Point(99, 163);
             dependencyAddButton.Name = "dependencyAddButton";
             dependencyAddButton.Size = new Size(100, 35);
             dependencyAddButton.TabIndex = 36;
@@ -102,7 +102,7 @@
             dependencyDataGridView.Location = new Point(53, 204);
             dependencyDataGridView.Name = "dependencyDataGridView";
             dependencyDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dependencyDataGridView.Size = new Size(384, 271);
+            dependencyDataGridView.Size = new Size(406, 271);
             dependencyDataGridView.TabIndex = 35;
             dependencyDataGridView.MouseDoubleClick += dependencyDataGridView_MouseDoubleClick;
             // 
@@ -120,28 +120,28 @@
             // 
             dependencyDependentCourseIdLabel.AutoSize = true;
             dependencyDependentCourseIdLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dependencyDependentCourseIdLabel.Location = new Point(34, 95);
+            dependencyDependentCourseIdLabel.Location = new Point(60, 96);
             dependencyDependentCourseIdLabel.Name = "dependencyDependentCourseIdLabel";
-            dependencyDependentCourseIdLabel.Size = new Size(135, 17);
+            dependencyDependentCourseIdLabel.Size = new Size(109, 17);
             dependencyDependentCourseIdLabel.TabIndex = 33;
-            dependencyDependentCourseIdLabel.Text = "Dependent Course Id:";
+            dependencyDependentCourseIdLabel.Text = "2nd Scheduler Id:";
             // 
             // dependencyCourseIdLabel
             // 
             dependencyCourseIdLabel.AutoSize = true;
             dependencyCourseIdLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dependencyCourseIdLabel.Location = new Point(102, 63);
+            dependencyCourseIdLabel.Location = new Point(65, 63);
             dependencyCourseIdLabel.Name = "dependencyCourseIdLabel";
-            dependencyCourseIdLabel.Size = new Size(67, 17);
+            dependencyCourseIdLabel.Size = new Size(104, 17);
             dependencyCourseIdLabel.TabIndex = 32;
-            dependencyCourseIdLabel.Text = "Course Id:";
+            dependencyCourseIdLabel.Text = "1st Scheduler Id:";
             // 
             // dependencyCourseIdComboBox
             // 
             dependencyCourseIdComboBox.FormattingEnabled = true;
             dependencyCourseIdComboBox.Location = new Point(175, 60);
             dependencyCourseIdComboBox.Name = "dependencyCourseIdComboBox";
-            dependencyCourseIdComboBox.Size = new Size(262, 25);
+            dependencyCourseIdComboBox.Size = new Size(284, 25);
             dependencyCourseIdComboBox.TabIndex = 39;
             // 
             // dependencyInHowManyDaysComboBox
@@ -149,7 +149,7 @@
             dependencyInHowManyDaysComboBox.FormattingEnabled = true;
             dependencyInHowManyDaysComboBox.Location = new Point(175, 124);
             dependencyInHowManyDaysComboBox.Name = "dependencyInHowManyDaysComboBox";
-            dependencyInHowManyDaysComboBox.Size = new Size(262, 25);
+            dependencyInHowManyDaysComboBox.Size = new Size(284, 25);
             dependencyInHowManyDaysComboBox.TabIndex = 45;
             // 
             // label1
@@ -191,18 +191,18 @@
             dependencyDependentCourseIdComboBox.FormattingEnabled = true;
             dependencyDependentCourseIdComboBox.Location = new Point(175, 93);
             dependencyDependentCourseIdComboBox.Name = "dependencyDependentCourseIdComboBox";
-            dependencyDependentCourseIdComboBox.Size = new Size(262, 25);
+            dependencyDependentCourseIdComboBox.Size = new Size(284, 25);
             dependencyDependentCourseIdComboBox.TabIndex = 48;
             // 
             // dgDependencyCourseId
             // 
-            dgDependencyCourseId.HeaderText = "Scheduler Id";
+            dgDependencyCourseId.HeaderText = "1st Scheduler Id";
             dgDependencyCourseId.Name = "dgDependencyCourseId";
-            dgDependencyCourseId.Width = 90;
+            dgDependencyCourseId.Width = 110;
             // 
             // dgDependencyDependentCourseId
             // 
-            dgDependencyDependentCourseId.HeaderText = "Dependent Scheduler Id";
+            dgDependencyDependentCourseId.HeaderText = "2nd Scheduler Id";
             dgDependencyDependentCourseId.Name = "dgDependencyDependentCourseId";
             dgDependencyDependentCourseId.Width = 110;
             // 

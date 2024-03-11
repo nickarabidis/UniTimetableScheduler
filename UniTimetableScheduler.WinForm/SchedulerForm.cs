@@ -509,6 +509,7 @@ namespace Scheduler.WinForm
             GeneratedScheduleForm generatedTimetable = new GeneratedScheduleForm();
             generatedTimetable.Show();
         }
+
     }
 }
 
