@@ -54,15 +54,15 @@ Scheduler:
 Generated Schedule:
 - Shows the generated schedule and the data.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/86992b9f-24f4-484c-8a59-d2daaf17e5d1)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/550ea984-d498-4559-b76c-541aa3369953)
 
 Generated Timetable:
 - Shows the generated timetable on a browser with HTML.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/cca4ca5a-4e99-4d91-9a83-1b2c37df8761)
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/bee15f51-40f1-479f-ad23-8286e56e9d7a)
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/46003a32-aa26-4042-803f-d282233052a6)
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/f7210739-90f9-4449-9ded-103f9a433c14)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/48970d05-8748-462f-a787-06d3c7405db3)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/92b94b92-a3a5-4515-855f-bf3f327f2a53)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/02c421a6-17e7-480f-9975-4a754c3424fe)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/edb96cfc-4f21-4c27-9072-22f8148ff89e)
 
 
 ## Licence
