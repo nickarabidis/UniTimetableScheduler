@@ -1,4 +1,4 @@
-# University Class Scheduler
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/d1ab3425-3c4b-4b43-ad95-9eab788b96f2)# University Class Scheduler
 
 ## Description
 The University Class Scheduler Software is a software for the automatic generation of a timetable with the specific requirements for the needs of a University.
@@ -36,32 +36,33 @@ Periods:
 Dependencies:
 - Add/Update and Delete a **Dependency** with its data.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/dccf2984-5f07-4aa1-9d1e-17546ff359f9)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/95fe951b-bc47-4b62-a11f-cb7f45b00501)
+
 
 Preferences:
 - Add/Update and Delete a **Preferred Day** with its data.
 - Add/Update and Delete a **Preferred Start Time** with its data.
 - Add/Update and Delete a **Preferred Room** with its data.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/b0433e78-d76e-49b3-a5f5-6e5af9a3fcd5)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/8c217b95-4e92-4164-8980-d260464b93ca)
 
 Scheduler:
 - Add/Update and Delete a **Scheduler** with its data.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/12376004-6a11-4306-8540-eddf925e1501)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/dd334278-01ee-42b8-8f1e-645088475a2f)
 
 Generated Schedule:
 - Shows the generated schedule and the data.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/7adfaa75-b225-4aa4-a9a9-f9b79b80d2c9)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/86992b9f-24f4-484c-8a59-d2daaf17e5d1)
 
 Generated Timetable:
-- Shows the generated timetable on a browser with html.
+- Shows the generated timetable on a browser with HTML.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/ee66ebb2-4de9-496a-ba3f-ac8a06265178)
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/89630004-b976-411f-9ca8-1620c95d8ed9)
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/28a06329-6732-4bb0-a192-733af188b69f)
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/f528a77f-24df-4963-a186-168dabee974c)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/cca4ca5a-4e99-4d91-9a83-1b2c37df8761)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/bee15f51-40f1-479f-ad23-8286e56e9d7a)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/46003a32-aa26-4042-803f-d282233052a6)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/f7210739-90f9-4449-9ded-103f9a433c14)
 
 
 ## Licence
