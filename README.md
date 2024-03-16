@@ -1,4 +1,4 @@
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/d1ab3425-3c4b-4b43-ad95-9eab788b96f2)# University Class Scheduler
+# University Class Scheduler
 
 ## Description
 The University Class Scheduler Software is a software for the automatic generation of a timetable with the specific requirements for the needs of a University.
