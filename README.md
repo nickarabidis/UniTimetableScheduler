@@ -60,7 +60,7 @@ Generated Timetable:
 - Shows the generated timetable on a browser with HTML.
 
 ![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/48970d05-8748-462f-a787-06d3c7405db3)
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/92b94b92-a3a5-4515-855f-bf3f327f2a53)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/05f0f7aa-8d52-4b69-a9e2-dbe2e1bbb5d8)
 ![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/02c421a6-17e7-480f-9975-4a754c3424fe)
 ![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/edb96cfc-4f21-4c27-9072-22f8148ff89e)
 
