@@ -36,32 +36,34 @@ Periods:
 Dependencies:
 - Add/Update and Delete a **Dependency** with its data.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/dccf2984-5f07-4aa1-9d1e-17546ff359f9)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/95fe951b-bc47-4b62-a11f-cb7f45b00501)
+
 
 Preferences:
 - Add/Update and Delete a **Preferred Day** with its data.
 - Add/Update and Delete a **Preferred Start Time** with its data.
 - Add/Update and Delete a **Preferred Room** with its data.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/b0433e78-d76e-49b3-a5f5-6e5af9a3fcd5)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/8c217b95-4e92-4164-8980-d260464b93ca)
 
 Scheduler:
 - Add/Update and Delete a **Scheduler** with its data.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/12376004-6a11-4306-8540-eddf925e1501)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/dd334278-01ee-42b8-8f1e-645088475a2f)
 
 Generated Schedule:
 - Shows the generated schedule and the data.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/7adfaa75-b225-4aa4-a9a9-f9b79b80d2c9)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/550ea984-d498-4559-b76c-541aa3369953)
 
 Generated Timetable:
-- Shows the generated timetable with html.
+- Shows the generated timetable on a browser with HTML.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/8994995b-a1f5-4365-b7a8-bc1ba7f306ba)
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/0981826b-276b-47fc-a8b0-8729b7a3b63c)
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/469a4d24-3b5b-490a-9ee0-9ab76c63c1cc)
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/ef68b0e3-82f0-46e0-b6f0-153c2941e91e)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/48970d05-8748-462f-a787-06d3c7405db3)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/05f0f7aa-8d52-4b69-a9e2-dbe2e1bbb5d8)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/02c421a6-17e7-480f-9975-4a754c3424fe)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/edb96cfc-4f21-4c27-9072-22f8148ff89e)
+
 
 ## Licence
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
