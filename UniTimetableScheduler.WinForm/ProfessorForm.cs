@@ -217,5 +217,13 @@ namespace Scheduler.WinForm
             professorNameTextBox.Text = professorDataGridView.SelectedRows[0].Cells["dgProfessorName"].Value.ToString();
             professorMeetingComboBox.Text = professorDataGridView.SelectedRows[0].Cells["dgProfessorMeeting"].Value.ToString();
         }
+
+        private void professorIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) & (Keys)e.KeyChar != Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

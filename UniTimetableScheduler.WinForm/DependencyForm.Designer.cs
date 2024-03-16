@@ -35,6 +35,9 @@
             dependencyDeleteButton = new Button();
             dependencyAddButton = new Button();
             dependencyDataGridView = new DataGridView();
+            dgDependencyCourseId = new DataGridViewTextBoxColumn();
+            dgDependencyDependentCourseId = new DataGridViewTextBoxColumn();
+            dgDependencyInHowManyDays = new DataGridViewTextBoxColumn();
             dependenciesLabel = new Label();
             dependencyDependentCourseIdLabel = new Label();
             dependencyCourseIdLabel = new Label();
@@ -45,9 +48,6 @@
             totalDependenciesLabel = new Label();
             dependencyErrorProvider = new ErrorProvider(components);
             dependencyDependentCourseIdComboBox = new ComboBox();
-            dgDependencyCourseId = new DataGridViewTextBoxColumn();
-            dgDependencyDependentCourseId = new DataGridViewTextBoxColumn();
-            dgDependencyInHowManyDays = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dependencyDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dependencyErrorProvider).BeginInit();
             SuspendLayout();
@@ -106,6 +106,24 @@
             dependencyDataGridView.TabIndex = 35;
             dependencyDataGridView.MouseDoubleClick += dependencyDataGridView_MouseDoubleClick;
             // 
+            // dgDependencyCourseId
+            // 
+            dgDependencyCourseId.HeaderText = "1st Scheduler Id";
+            dgDependencyCourseId.Name = "dgDependencyCourseId";
+            dgDependencyCourseId.Width = 110;
+            // 
+            // dgDependencyDependentCourseId
+            // 
+            dgDependencyDependentCourseId.HeaderText = "2nd Scheduler Id";
+            dgDependencyDependentCourseId.Name = "dgDependencyDependentCourseId";
+            dgDependencyDependentCourseId.Width = 110;
+            // 
+            // dgDependencyInHowManyDays
+            // 
+            dgDependencyInHowManyDays.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgDependencyInHowManyDays.HeaderText = "In How Many Days";
+            dgDependencyInHowManyDays.Name = "dgDependencyInHowManyDays";
+            // 
             // dependenciesLabel
             // 
             dependenciesLabel.AutoSize = true;
@@ -143,6 +161,7 @@
             dependencyCourseIdComboBox.Name = "dependencyCourseIdComboBox";
             dependencyCourseIdComboBox.Size = new Size(284, 25);
             dependencyCourseIdComboBox.TabIndex = 39;
+            dependencyCourseIdComboBox.KeyPress += dependencyCourseIdComboBox_KeyPress;
             // 
             // dependencyInHowManyDaysComboBox
             // 
@@ -151,6 +170,7 @@
             dependencyInHowManyDaysComboBox.Name = "dependencyInHowManyDaysComboBox";
             dependencyInHowManyDaysComboBox.Size = new Size(284, 25);
             dependencyInHowManyDaysComboBox.TabIndex = 45;
+            dependencyInHowManyDaysComboBox.KeyPress += dependencyInHowManyDaysComboBox_KeyPress;
             // 
             // label1
             // 
@@ -193,24 +213,7 @@
             dependencyDependentCourseIdComboBox.Name = "dependencyDependentCourseIdComboBox";
             dependencyDependentCourseIdComboBox.Size = new Size(284, 25);
             dependencyDependentCourseIdComboBox.TabIndex = 48;
-            // 
-            // dgDependencyCourseId
-            // 
-            dgDependencyCourseId.HeaderText = "1st Scheduler Id";
-            dgDependencyCourseId.Name = "dgDependencyCourseId";
-            dgDependencyCourseId.Width = 110;
-            // 
-            // dgDependencyDependentCourseId
-            // 
-            dgDependencyDependentCourseId.HeaderText = "2nd Scheduler Id";
-            dgDependencyDependentCourseId.Name = "dgDependencyDependentCourseId";
-            dgDependencyDependentCourseId.Width = 110;
-            // 
-            // dgDependencyInHowManyDays
-            // 
-            dgDependencyInHowManyDays.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgDependencyInHowManyDays.HeaderText = "In How Many Days";
-            dgDependencyInHowManyDays.Name = "dgDependencyInHowManyDays";
+            dependencyDependentCourseIdComboBox.KeyPress += dependencyDependentCourseIdComboBox_KeyPress;
             // 
             // DependencyForm
             // 

@@ -104,7 +104,7 @@ namespace Scheduler.WinForm
         {
             dependencyCourseIdComboBox.ResetText();
             dependencyDependentCourseIdComboBox.ResetText();
-            
+
             dependencyInHowManyDaysComboBox.ResetText();
 
             dependencyCourseIdComboBox.Enabled = true;
@@ -221,7 +221,7 @@ namespace Scheduler.WinForm
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-            
+
             int[] inHowManyDays = new int[] { 1, 2, 3, 4, 5 };
 
             dependencyInHowManyDaysComboBox.DataSource = inHowManyDays;
@@ -237,6 +237,29 @@ namespace Scheduler.WinForm
             dependencyDependentCourseIdComboBox.Text = dependencyDataGridView.SelectedRows[0].Cells["dgDependencyDependentCourseId"].Value.ToString();
             dependencyInHowManyDaysComboBox.Text = dependencyDataGridView.SelectedRows[0].Cells["dgDependencyInHowManyDays"].Value.ToString();
 
+        }
+
+        private void dependencyCourseIdComboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noChar(sender, e);
+        }
+
+        private void dependencyDependentCourseIdComboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noChar(sender, e);
+        }
+
+        private void dependencyInHowManyDaysComboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noChar(sender, e);
+        }
+
+        private void noChar(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) & (Keys)e.KeyChar != Keys.Back)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

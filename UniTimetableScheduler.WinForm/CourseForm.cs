@@ -24,7 +24,7 @@ namespace Scheduler.WinForm
             ClearRecords();
 
             LoadData();
-            
+
         }
 
         private bool Validation()
@@ -190,6 +190,13 @@ namespace Scheduler.WinForm
             bool[] labs = new bool[] { true, false };
             courseLabComboBox.DataSource = labs;
         }
-        
+
+        private void courseIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) & (Keys)e.KeyChar != Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

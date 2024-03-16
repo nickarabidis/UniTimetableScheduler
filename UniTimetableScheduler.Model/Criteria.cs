@@ -386,7 +386,7 @@ namespace Scheduler.Model
 
 
 
-        //public static readonly float[] Weights = { 0f, 0f, 0f, 0f, 0f, 0f };
+        //public static readonly float[] Weights = { 0f, 0f, 0f, 0f, 0f, 0f, 0f };
         public static readonly float[] Weights = { 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f };
     }
 }

@@ -202,6 +202,7 @@
             daySchedulerIdComboBox.Name = "daySchedulerIdComboBox";
             daySchedulerIdComboBox.Size = new Size(138, 25);
             daySchedulerIdComboBox.TabIndex = 75;
+            daySchedulerIdComboBox.KeyPress += daySchedulerIdComboBox_KeyPress;
             // 
             // dayIdComboBox
             // 
@@ -210,6 +211,7 @@
             dayIdComboBox.Name = "dayIdComboBox";
             dayIdComboBox.Size = new Size(138, 25);
             dayIdComboBox.TabIndex = 76;
+            dayIdComboBox.KeyPress += dayIdComboBox_KeyPress;
             // 
             // startTimeIdComboBox
             // 
@@ -218,6 +220,7 @@
             startTimeIdComboBox.Name = "startTimeIdComboBox";
             startTimeIdComboBox.Size = new Size(171, 25);
             startTimeIdComboBox.TabIndex = 87;
+            startTimeIdComboBox.KeyPress += startTimeIdComboBox_KeyPress;
             // 
             // startTimeSchedulerIdComboBox
             // 
@@ -226,6 +229,7 @@
             startTimeSchedulerIdComboBox.Name = "startTimeSchedulerIdComboBox";
             startTimeSchedulerIdComboBox.Size = new Size(171, 25);
             startTimeSchedulerIdComboBox.TabIndex = 86;
+            startTimeSchedulerIdComboBox.KeyPress += startTimeSchedulerIdComboBox_KeyPress;
             // 
             // totalPreferredStartTimeValueLabel
             // 
@@ -350,6 +354,7 @@
             roomIdComboBox.Name = "roomIdComboBox";
             roomIdComboBox.Size = new Size(154, 25);
             roomIdComboBox.TabIndex = 99;
+            roomIdComboBox.KeyPress += roomIdComboBox_KeyPress;
             // 
             // roomSchedulerIdComboBox
             // 
@@ -358,6 +363,7 @@
             roomSchedulerIdComboBox.Name = "roomSchedulerIdComboBox";
             roomSchedulerIdComboBox.Size = new Size(154, 25);
             roomSchedulerIdComboBox.TabIndex = 98;
+            roomSchedulerIdComboBox.KeyPress += roomSchedulerIdComboBox_KeyPress;
             // 
             // totalPreferredRoomValueLabel
             // 

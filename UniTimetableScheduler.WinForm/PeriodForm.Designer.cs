@@ -150,6 +150,7 @@
             semesterIdTextBox.Name = "semesterIdTextBox";
             semesterIdTextBox.Size = new Size(200, 25);
             semesterIdTextBox.TabIndex = 34;
+            semesterIdTextBox.KeyPress += semesterIdTextBox_KeyPress;
             // 
             // semesterNameTextBox
             // 
@@ -231,6 +232,7 @@
             dayIdTextBox.Name = "dayIdTextBox";
             dayIdTextBox.Size = new Size(200, 25);
             dayIdTextBox.TabIndex = 40;
+            dayIdTextBox.KeyPress += dayIdTextBox_KeyPress;
             // 
             // dayNameTextBox
             // 
@@ -312,6 +314,7 @@
             startTimeIdTextBox.Name = "startTimeIdTextBox";
             startTimeIdTextBox.Size = new Size(200, 25);
             startTimeIdTextBox.TabIndex = 46;
+            startTimeIdTextBox.KeyPress += startTimeIdTextBox_KeyPress;
             // 
             // startTimeNameTextBox
             // 

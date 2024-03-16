@@ -70,6 +70,7 @@
             courseIdTextBox.Name = "courseIdTextBox";
             courseIdTextBox.Size = new Size(147, 25);
             courseIdTextBox.TabIndex = 2;
+            courseIdTextBox.KeyPress += courseIdTextBox_KeyPress;
             // 
             // courseNameLabel
             // 

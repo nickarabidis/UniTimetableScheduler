@@ -189,6 +189,14 @@ namespace Scheduler.WinForm
             roomNameTextBox.Text = roomDataGridView.SelectedRows[0].Cells["dgRoomName"].Value.ToString();
             roomLabComboBox.Text = roomDataGridView.SelectedRows[0].Cells["dgRoomLab"].Value.ToString();
         }
+
+        private void roomIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) & (Keys)e.KeyChar != Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
 

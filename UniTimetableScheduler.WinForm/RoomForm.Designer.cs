@@ -146,6 +146,7 @@
             roomIdTextBox.Name = "roomIdTextBox";
             roomIdTextBox.Size = new Size(185, 25);
             roomIdTextBox.TabIndex = 26;
+            roomIdTextBox.KeyPress += roomIdTextBox_KeyPress;
             // 
             // roomNameTextBox
             // 

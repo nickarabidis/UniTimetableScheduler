@@ -198,6 +198,7 @@
             schedulerSemesterComboBox.Name = "schedulerSemesterComboBox";
             schedulerSemesterComboBox.Size = new Size(116, 25);
             schedulerSemesterComboBox.TabIndex = 22;
+            schedulerSemesterComboBox.KeyPress += schedulerSemesterComboBox_KeyPress;
             // 
             // totalCoursesLabel
             // 
@@ -262,6 +263,7 @@
             schedulerCourseComboBox.Name = "schedulerCourseComboBox";
             schedulerCourseComboBox.Size = new Size(116, 25);
             schedulerCourseComboBox.TabIndex = 38;
+            schedulerCourseComboBox.KeyPress += schedulerCourseComboBox_KeyPress;
             // 
             // schedulerProfessorComboBox
             // 
@@ -271,6 +273,7 @@
             schedulerProfessorComboBox.Name = "schedulerProfessorComboBox";
             schedulerProfessorComboBox.Size = new Size(116, 25);
             schedulerProfessorComboBox.TabIndex = 39;
+            schedulerProfessorComboBox.KeyPress += schedulerProfessorComboBox_KeyPress;
             // 
             // schedulerDurationTextBox
             // 
@@ -279,6 +282,7 @@
             schedulerDurationTextBox.Name = "schedulerDurationTextBox";
             schedulerDurationTextBox.Size = new Size(116, 25);
             schedulerDurationTextBox.TabIndex = 41;
+            schedulerDurationTextBox.KeyPress += schedulerDurationTextBox_KeyPress;
             // 
             // generateButton
             // 
@@ -319,6 +323,7 @@
             schedulerIdTextBox.Name = "schedulerIdTextBox";
             schedulerIdTextBox.Size = new Size(116, 25);
             schedulerIdTextBox.TabIndex = 62;
+            schedulerIdTextBox.KeyPress += schedulerIdTextBox_KeyPress;
             // 
             // totalClassValueLabel
             // 

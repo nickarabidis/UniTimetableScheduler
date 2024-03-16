@@ -52,19 +52,20 @@ namespace Scheduler.WinForm
                 //bool twoClasses;
 
                 var key = new Point(periodId, semesterId);
+                //maybe instead of slotTable[key] should be cc.Duration
                 var semesterDuration = slotTable.ContainsKey(key) ? slotTable[key] : null;
                 if (semesterDuration == null)
                 {
                     semesterDuration = new int[SEMESTER_COLUMN_NUMBER];
                     slotTable[key] = semesterDuration;
                 }
-                
+
                 if (semesterDuration[dayId] < cc.Duration)
-{
+                {
                     semesterDuration[dayId] = cc.Duration;
                 }
                 //semesterDuration[dayId] = cc.Duration;
-                
+
                 for (int m = 1; m < cc.Duration; ++m)
                 {
                     var nextRow = new Point(periodId + m, semesterId);
@@ -119,7 +120,7 @@ namespace Scheduler.WinForm
                 {
                     semesterSchedule[dayId] = sb.ToString();
                 }
-                
+
                 //ci += CRITERIAS.Length;
             }
             return timeTable;
@@ -143,11 +144,11 @@ namespace Scheduler.WinForm
                 //{
                 //    durationText[i] = splitContent[i].Substring(splitContent[i].IndexOf("Duration: ") + 10).Trim();
                 //}
-                
+
                 //string[] splitContentDuration = content.Split("---");
                 if (splitContent.Length == 2)
                 {
-                   
+
                     sb.Append("<td style='border: .1em solid black; padding: .25em; background-color: white;' colspan='1' rowspan='").Append(rowspan).Append("'>").Append(splitContent[0]).Append("</td>");
                     sb.Append("<td style='border: .1em solid black; padding: .25em; background-color: white;' colspan='1' rowspan='").Append(rowspan).Append("'>").Append(splitContent[1]).Append("</td>");
 
@@ -193,10 +194,10 @@ namespace Scheduler.WinForm
             sb.Append("<body style='background-color: #D7E4F2'>\n");
             for (int semesterId = 0; semesterId < nsemester; ++semesterId)
             {
-                if (semesterId == 0) 
+                if (semesterId == 0)
                 {
-                   
-                    sb.Append("<h2 style='color: #03025D; text-decoration: underline; text-align: center; padding: 0em; margin: 0em'>TIMETABLE FOR THE WINTER SEMESTERS OF <span style='color: #014F86;'>CS IHU</span></h2>\n");
+
+                    sb.Append("<h2 style='color: #03025D; text-decoration: underline; text-align: center; padding: 0em; margin: 0em'>TIMETABLE FOR THE SEMESTERS OF <span style='color: #014F86;'>CS IHU</span></h2>\n");
                 }
 
                 var semester = solution.Configuration.GetSemesterById(semesterId);

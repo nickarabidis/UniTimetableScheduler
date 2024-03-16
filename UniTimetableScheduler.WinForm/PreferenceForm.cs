@@ -587,5 +587,43 @@ namespace Scheduler.WinForm
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void daySchedulerIdComboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noChar(sender, e);
+        }
+
+        private void dayIdComboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noChar(sender, e);
+        }
+
+        private void startTimeSchedulerIdComboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noChar(sender, e);
+        }
+
+        private void startTimeIdComboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noChar(sender, e);
+        }
+
+        private void roomSchedulerIdComboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noChar(sender, e);
+        }
+
+        private void roomIdComboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noChar(sender, e);
+        }
+
+        private void noChar(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) & (Keys)e.KeyChar != Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

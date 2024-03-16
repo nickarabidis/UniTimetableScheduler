@@ -32,6 +32,9 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfessorForm));
             professorDataGridView = new DataGridView();
+            dgProfessorId = new DataGridViewTextBoxColumn();
+            dgProfessorName = new DataGridViewTextBoxColumn();
+            dgProfessorMeeting = new DataGridViewTextBoxColumn();
             professorLabel = new Label();
             professorIdLabel = new Label();
             professorNameLabel = new Label();
@@ -45,9 +48,6 @@
             professorDeleteButton = new Button();
             professorAddButton = new Button();
             professorErrorProvider = new ErrorProvider(components);
-            dgProfessorId = new DataGridViewTextBoxColumn();
-            dgProfessorName = new DataGridViewTextBoxColumn();
-            dgProfessorMeeting = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)professorDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)professorErrorProvider).BeginInit();
             SuspendLayout();
@@ -72,6 +72,23 @@
             professorDataGridView.Size = new Size(464, 239);
             professorDataGridView.TabIndex = 22;
             professorDataGridView.MouseDoubleClick += professorDataGridView_MouseDoubleClick;
+            // 
+            // dgProfessorId
+            // 
+            dgProfessorId.HeaderText = "Id";
+            dgProfessorId.Name = "dgProfessorId";
+            dgProfessorId.Width = 70;
+            // 
+            // dgProfessorName
+            // 
+            dgProfessorName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgProfessorName.HeaderText = "Name";
+            dgProfessorName.Name = "dgProfessorName";
+            // 
+            // dgProfessorMeeting
+            // 
+            dgProfessorMeeting.HeaderText = "Meeting";
+            dgProfessorMeeting.Name = "dgProfessorMeeting";
             // 
             // professorLabel
             // 
@@ -111,6 +128,7 @@
             professorIdTextBox.Name = "professorIdTextBox";
             professorIdTextBox.Size = new Size(185, 25);
             professorIdTextBox.TabIndex = 18;
+            professorIdTextBox.KeyPress += professorIdTextBox_KeyPress;
             // 
             // professorNameTextBox
             // 
@@ -195,23 +213,6 @@
             // professorErrorProvider
             // 
             professorErrorProvider.ContainerControl = this;
-            // 
-            // dgProfessorId
-            // 
-            dgProfessorId.HeaderText = "Id";
-            dgProfessorId.Name = "dgProfessorId";
-            dgProfessorId.Width = 70;
-            // 
-            // dgProfessorName
-            // 
-            dgProfessorName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgProfessorName.HeaderText = "Name";
-            dgProfessorName.Name = "dgProfessorName";
-            // 
-            // dgProfessorMeeting
-            // 
-            dgProfessorMeeting.HeaderText = "Meeting";
-            dgProfessorMeeting.Name = "dgProfessorMeeting";
             // 
             // ProfessorForm
             // 

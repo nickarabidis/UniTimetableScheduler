@@ -477,5 +477,30 @@ namespace Scheduler.WinForm
             startTimeIdTextBox.Text = startTimeDataGridView.SelectedRows[0].Cells["dgStartTimeId"].Value.ToString();
             startTimeNameTextBox.Text = startTimeDataGridView.SelectedRows[0].Cells["dgStartTimeName"].Value.ToString();
         }
+
+        private void semesterIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noChar(sender, e);
+        }
+
+
+        private void dayIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noChar(sender, e);
+        }
+
+
+        private void startTimeIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            noChar(sender, e);
+        }
+
+        private void noChar(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) & (Keys)e.KeyChar != Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
