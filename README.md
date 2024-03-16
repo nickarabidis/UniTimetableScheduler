@@ -56,12 +56,13 @@ Generated Schedule:
 ![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/7adfaa75-b225-4aa4-a9a9-f9b79b80d2c9)
 
 Generated Timetable:
-- Shows the generated timetable with html.
+- Shows the generated timetable on a browser with html.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/8994995b-a1f5-4365-b7a8-bc1ba7f306ba)
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/0981826b-276b-47fc-a8b0-8729b7a3b63c)
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/469a4d24-3b5b-490a-9ee0-9ab76c63c1cc)
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/ef68b0e3-82f0-46e0-b6f0-153c2941e91e)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/ee66ebb2-4de9-496a-ba3f-ac8a06265178)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/89630004-b976-411f-9ca8-1620c95d8ed9)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/28a06329-6732-4bb0-a192-733af188b69f)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/f528a77f-24df-4963-a186-168dabee974c)
+
 
 ## Licence
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
