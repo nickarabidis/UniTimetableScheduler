@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Scheduler.Algorithm;
 using System.Net.WebSockets;
+using System.Data.Entity.Infrastructure;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Scheduler.WinForm
 {
@@ -105,18 +107,33 @@ namespace Scheduler.WinForm
                 SQLiteConnection con = Database.GetConnection();
 
                 var sqlQuery = "";
+
+
+
                 if (ifClassExists(con, schedulerIdTextBox.Text))
                 {
+                    String courseName = schedulerCourseComboBox.Text;
+                    int courseId = FetchIdsFromTable("Course", courseName);
+                    String professorName = schedulerProfessorComboBox.Text;
+                    int professorId = FetchIdsFromTable("Professor", professorName);
+                    String semesterName = schedulerSemesterComboBox.Text;
+                    int semesterId = FetchIdsFromTable("Semester", semesterName);
 
-                    sqlQuery = @"UPDATE [Scheduler] SET [Course] = '" + schedulerCourseComboBox.Text + "',[Professor] = '" + schedulerProfessorComboBox.Text + "', [Duration] = '" + schedulerDurationTextBox.Text + "', [Semester] = '" + schedulerSemesterComboBox.Text + "' WHERE [SchedulerID] = '" + schedulerIdTextBox.Text + "'";
+                    sqlQuery = @"UPDATE [Scheduler] SET [Course] = '" + courseId + "',[Professor] = '" + professorId + "', [Duration] = '" + schedulerDurationTextBox.Text + "', [Semester] = '" + semesterId + "' WHERE [SchedulerID] = '" + schedulerIdTextBox.Text + "'";
                     //OverlappingHours();
 
                 }
                 else
                 {
+                    String courseName = schedulerCourseComboBox.Text;
+                    int courseId = FetchIdsFromTable("Course", courseName);
+                    String professorName = schedulerProfessorComboBox.Text;
+                    int professorId = FetchIdsFromTable("Professor", professorName);
+                    String semesterName = schedulerSemesterComboBox.Text;
+                    int semesterId = FetchIdsFromTable("Semester", semesterName);
 
                     sqlQuery = @"INSERT INTO [Scheduler] ([SchedulerID],[Course],[Professor],[Duration],[Semester]) VALUES 
-                            ('" + schedulerIdTextBox.Text + "','" + schedulerCourseComboBox.Text + "','" + schedulerProfessorComboBox.Text + "','" + schedulerDurationTextBox.Text + "','" + schedulerSemesterComboBox.Text + "')";
+                            ('" + schedulerIdTextBox.Text + "','" + courseId + "','" + professorId + "','" + schedulerDurationTextBox.Text + "','" + semesterId + "')";
                     //OverlappingHours();
                 }
                 SQLiteCommand cmd = new SQLiteCommand(sqlQuery, con);
@@ -202,12 +219,42 @@ namespace Scheduler.WinForm
             }
         }
 
-        //TO-DO: datagrid
+        private void deleteAllButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to DELETE ALL the data?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                SQLiteConnection con = Database.GetConnection();
+
+                var sqlQuery = "";
+
+                sqlQuery = @"DELETE FROM [Scheduler]";
+                SQLiteCommand cmd = new SQLiteCommand(sqlQuery, con);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("All Records Deleted Successfully!");
+
+                LoadData();
+                ClearRecords();
+            }
+        }
+
+
         public void LoadData()
         {
             SQLiteConnection con = Database.GetConnection();
 
-            SQLiteDataAdapter sda = new SQLiteDataAdapter("Select * From [Scheduler]", con);
+            //SQLiteDataAdapter sda = new SQLiteDataAdapter("Select * From [Scheduler]", con);
+            SQLiteDataAdapter sda = new SQLiteDataAdapter("SELECT " +
+                "Scheduler.SchedulerID AS SchedulerID, " +
+                "Course.Name AS Course, " +
+                "Professor.Name AS Professor, " +
+                "Scheduler.Duration AS Duration, " +
+                "Semester.Name AS Semester " +
+                "FROM Scheduler " +
+                "JOIN Course ON Scheduler.Course = Course.CourseID " +
+                "JOIN Professor ON Scheduler.Professor = Professor.ProfessorID " +
+                "JOIN Semester ON Scheduler.Semester = Semester.SemesterID", con);
 
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -217,37 +264,59 @@ namespace Scheduler.WinForm
             {
                 int n = schedulerDataGridView.Rows.Add();
                 schedulerDataGridView.Rows[n].Cells["dgSchedulerId"].Value = int.Parse(row["SchedulerID"].ToString());
-                schedulerDataGridView.Rows[n].Cells["dgCourse"].Value = int.Parse(row["Course"].ToString());
-                schedulerDataGridView.Rows[n].Cells["dgProfessor"].Value = int.Parse(row["Professor"].ToString());
+                schedulerDataGridView.Rows[n].Cells["dgCourse"].Value = row["Course"].ToString();
+                schedulerDataGridView.Rows[n].Cells["dgProfessor"].Value = row["Professor"].ToString();
                 schedulerDataGridView.Rows[n].Cells["dgDuration"].Value = int.Parse(row["Duration"].ToString());
-                schedulerDataGridView.Rows[n].Cells["dgSemester"].Value = int.Parse(row["Semester"].ToString());
+                schedulerDataGridView.Rows[n].Cells["dgSemester"].Value = row["Semester"].ToString();
             }
+
+            //foreach (DataRow row in dt.Rows)
+            //{
+            //    int n = schedulerDataGridView.Rows.Add();
+            //    schedulerDataGridView.Rows[n].Cells["dgSchedulerId"].Value = int.Parse(row["SchedulerID"].ToString());
+            //    schedulerDataGridView.Rows[n].Cells["dgCourse"].Value = int.Parse(row["Course"].ToString());
+            //    schedulerDataGridView.Rows[n].Cells["dgProfessor"].Value = int.Parse(row["Professor"].ToString());
+            //    schedulerDataGridView.Rows[n].Cells["dgDuration"].Value = int.Parse(row["Duration"].ToString());
+            //    schedulerDataGridView.Rows[n].Cells["dgSemester"].Value = int.Parse(row["Semester"].ToString());
+            //}
+
+            //// Use LINQ to get unique courses
+            //var uniqueCourses = dt.AsEnumerable()
+            //    .Select(row =>
+            //    {
+            //        if (int.TryParse(row["Course"].ToString(), out int courseValue))
+            //        {
+            //            return courseValue;
+            //        }
+            //        return -1; // Or any default value you prefer for failure
+            //    })
+            //    .Distinct().ToList();
+
+            //// Use LINQ to get unique professors
+            //var uniqueProfessors = dt.AsEnumerable()
+            //    .Select(row =>
+            //    {
+            //        if (int.TryParse(row["Professor"].ToString(), out int professorValue))
+            //        {
+            //            return professorValue;
+            //        }
+            //        return -1; // Or any default value you prefer for failure
+            //    })
+            //    .Distinct()
+            //    .ToList();
 
             // Use LINQ to get unique courses
             var uniqueCourses = dt.AsEnumerable()
-                .Select(row =>
-                {
-                    if (int.TryParse(row["Course"].ToString(), out int courseValue))
-                    {
-                        return courseValue;
-                    }
-                    return -1; // Or any default value you prefer for failure
-                })
+                .Select(row => row["Course"].ToString())
                 .Distinct()
                 .ToList();
 
             // Use LINQ to get unique professors
             var uniqueProfessors = dt.AsEnumerable()
-                .Select(row =>
-                {
-                    if (int.TryParse(row["Professor"].ToString(), out int professorValue))
-                    {
-                        return professorValue;
-                    }
-                    return -1; // Or any default value you prefer for failure
-                })
+                .Select(row => row["Professor"].ToString())
                 .Distinct()
                 .ToList();
+
 
             if (schedulerDataGridView.Rows.Count > 0)
             {
@@ -272,7 +341,7 @@ namespace Scheduler.WinForm
             try
             {
                 // Course data in ComboBox
-                string courseQuery = "SELECT CourseID FROM Course";
+                string courseQuery = "SELECT Name FROM Course";
                 using (SQLiteCommand cmd = new SQLiteCommand(courseQuery, con))
                 {
                     using (SQLiteDataReader reader = cmd.ExecuteReader())
@@ -281,13 +350,13 @@ namespace Scheduler.WinForm
                         {
                             while (reader.Read())
                             {
-                                schedulerCourseComboBox.Items.Add(reader["CourseID"].ToString());
+                                schedulerCourseComboBox.Items.Add(reader["Name"].ToString());
                             }
                         }
                     }
                 }
                 // Professor data in ComboBox
-                string professorQuery = "SELECT ProfessorID FROM Professor";
+                string professorQuery = "SELECT Name FROM Professor";
                 using (SQLiteCommand cmd = new SQLiteCommand(professorQuery, con))
                 {
                     using (SQLiteDataReader reader = cmd.ExecuteReader())
@@ -296,13 +365,13 @@ namespace Scheduler.WinForm
                         {
                             while (reader.Read())
                             {
-                                schedulerProfessorComboBox.Items.Add(reader["ProfessorID"].ToString());
+                                schedulerProfessorComboBox.Items.Add(reader["Name"].ToString());
                             }
                         }
                     }
                 }
                 // Semester data in ComboBox
-                string semesterQuery = "SELECT SemesterID FROM Semester";
+                string semesterQuery = "SELECT Name FROM Semester";
                 using (SQLiteCommand cmd = new SQLiteCommand(semesterQuery, con))
                 {
                     using (SQLiteDataReader reader = cmd.ExecuteReader())
@@ -311,7 +380,7 @@ namespace Scheduler.WinForm
                         {
                             while (reader.Read())
                             {
-                                schedulerSemesterComboBox.Items.Add(reader["SemesterID"].ToString());
+                                schedulerSemesterComboBox.Items.Add(reader["Name"].ToString());
                             }
                         }
                     }
@@ -322,6 +391,60 @@ namespace Scheduler.WinForm
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+
+            //try
+            //{
+            //    // Course data in ComboBox
+            //    string courseQuery = "SELECT CourseID FROM Course";
+            //    using (SQLiteCommand cmd = new SQLiteCommand(courseQuery, con))
+            //    {
+            //        using (SQLiteDataReader reader = cmd.ExecuteReader())
+            //        {
+            //            if (reader.HasRows)
+            //            {
+            //                while (reader.Read())
+            //                {
+            //                    schedulerCourseComboBox.Items.Add(reader["CourseID"].ToString());
+            //                }
+            //            }
+            //        }
+            //    }
+            //    // Professor data in ComboBox
+            //    string professorQuery = "SELECT ProfessorID FROM Professor";
+            //    using (SQLiteCommand cmd = new SQLiteCommand(professorQuery, con))
+            //    {
+            //        using (SQLiteDataReader reader = cmd.ExecuteReader())
+            //        {
+            //            if (reader.HasRows)
+            //            {
+            //                while (reader.Read())
+            //                {
+            //                    schedulerProfessorComboBox.Items.Add(reader["ProfessorID"].ToString());
+            //                }
+            //            }
+            //        }
+            //    }
+            //    // Semester data in ComboBox
+            //    string semesterQuery = "SELECT SemesterID FROM Semester";
+            //    using (SQLiteCommand cmd = new SQLiteCommand(semesterQuery, con))
+            //    {
+            //        using (SQLiteDataReader reader = cmd.ExecuteReader())
+            //        {
+            //            if (reader.HasRows)
+            //            {
+            //                while (reader.Read())
+            //                {
+            //                    schedulerSemesterComboBox.Items.Add(reader["SemesterID"].ToString());
+            //                }
+            //            }
+            //        }
+            //    }
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error: " + ex.Message);
+            //}
 
 
             //string[] subjects = new string[] {"∆ιακριτά Μαθηματικά", "Εισαγωγή στον προγραμματισμό με C, C++ Θ", "Εισαγωγή στον προγραμματισμό με C, C++ ΕΡΓ",
@@ -368,6 +491,21 @@ namespace Scheduler.WinForm
             schedulerDurationTextBox.Text = schedulerDataGridView.SelectedRows[0].Cells["dgDuration"].Value.ToString();
             schedulerSemesterComboBox.Text = schedulerDataGridView.SelectedRows[0].Cells["dgSemester"].Value.ToString();
 
+
+            //String courseName = schedulerDataGridView.SelectedRows[0].Cells["dgCourse"].Value.ToString();
+            //int courseId = FetchIdsFromTable("Course", courseName);
+            //schedulerCourseComboBox.Text = courseId.ToString(); //schedulerDataGridView.SelectedRows[0].Cells["dgCourse"].Value.ToString();
+
+            //String professorName = schedulerDataGridView.SelectedRows[0].Cells["dgProfessor"].Value.ToString();
+            //int professorId = FetchIdsFromTable("Professor", professorName);
+            //schedulerProfessorComboBox.Text = professorId.ToString(); //schedulerDataGridView.SelectedRows[0].Cells["dgProfessor"].Value.ToString();
+
+            //schedulerDurationTextBox.Text = schedulerDataGridView.SelectedRows[0].Cells["dgDuration"].Value.ToString();
+
+            //String semesterName = schedulerDataGridView.SelectedRows[0].Cells["dgSemester"].Value.ToString();
+            //int semesterId = FetchIdsFromTable("Semester", semesterName);
+            //schedulerSemesterComboBox.Text = semesterId.ToString(); //schedulerDataGridView.SelectedRows[0].Cells["dgSemester"].Value.ToString();
+
             //string selectedDays = schedulerDataGridView.SelectedRows[0].Cells["dgDay"].Value.ToString();
             //string[] dayArray = selectedDays.Split(','); // Split the string into an array of individual day values
 
@@ -380,6 +518,66 @@ namespace Scheduler.WinForm
             //    }
             //}
         }
+
+        private int FetchIdsFromTable(string tableName, string nameOfTableName)
+        {
+            int id = -1; // Assuming -1 indicates no result found or error
+
+            // Ensure proper SQL parameterization to prevent SQL injection
+            string query = $"SELECT {tableName}ID FROM {tableName} WHERE Name = @Name";
+
+            SQLiteConnection con = Database.GetConnection();
+
+            //con.Open();
+
+            using (var command = new SQLiteCommand(query, con))
+            {
+                // Add parameters to the command
+                command.Parameters.AddWithValue("@Name", nameOfTableName);
+
+                using (SQLiteDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        // Assuming CourseID is of type int
+                        id = Convert.ToInt32(reader[$"{tableName}ID"]);
+                    }
+                }
+            }
+
+            //con.Close(); // Close the connection
+
+            return id;
+        }
+
+        // Helper method to fetch Ids from SQLite table
+        //private int FetchIdsFromTable(string tableName, string nameOfTableName)
+        //{
+        //    SQLiteConnection con = Database.GetConnection();
+
+        //    using (var command = new SQLiteCommand($"SELECT CourseID FROM {tableName} WHERE Name = {nameOfTableName}", con))
+        //    {
+        //        using (var reader = command.ExecuteReader())
+        //        {
+        //            while (reader.Read())
+        //            {
+        //                var rowData = new Dictionary<string, object>();
+        //                for (int i = 0; i < reader.FieldCount; i++)
+        //                {
+        //                    string columnName = reader.GetName(i);
+        //                    object columnValue = reader.GetValue(i);
+
+        //                    Console.WriteLine($"Column: {columnName}, Type: {columnValue.GetType()}, Value: {columnValue}");
+
+        //                    rowData.Add(reader.GetName(i), reader.GetValue(i));
+        //                }
+        //                data.Add(rowData);
+        //            }
+        //        }
+        //    }
+
+        //    return data;
+        //}
 
         //private void generateButton_Click(object sender, EventArgs e)
         //{
@@ -476,6 +674,7 @@ namespace Scheduler.WinForm
 
             GeneratedScheduleForm generatedTimetable = new GeneratedScheduleForm();
             generatedTimetable.Show();
+
         }
 
 
@@ -512,6 +711,165 @@ namespace Scheduler.WinForm
 
 
 
+        private void printButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQLiteConnection con = Database.GetConnection();
+                DataTable schedulerData = LoadSchedulerDataFromDatabase(con);
+
+                string fileName = "SchedulerData.txt";
+                ExportSchedulerToTxt(schedulerData, fileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+
+        private DataTable LoadSchedulerDataFromDatabase(SQLiteConnection con)
+        {
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                //con.Open();
+                string query = "SELECT * FROM Scheduler";
+
+                using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, con))
+                {
+                    adapter.Fill(dataTable);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while loading data from the database: {ex.Message}");
+            }
+
+            return dataTable;
+
+        }
+
+        public void ExportSchedulerToTxt(DataTable schedulerData, string fileName)
+        {
+            try
+            {
+                // Get the path to the desktop folder
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                // Create a directory named "UniTimetableSchedulerData" on the desktop if it doesn't exist
+                string directoryPath = Path.Combine(desktopPath, "UniTimetableSchedulerData");
+                if (!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+
+                // Combine the directory path and file name to get the full file path
+                string filePath = Path.Combine(directoryPath, fileName);
+
+                // Create or overwrite the file
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    // Write header
+                    writer.WriteLine("SchedulerID, Course, Professor, Duration, Semester, FinalDay, FinalStartTime, FinalRoom");
+
+                    // Write rows
+                    foreach (DataRow row in schedulerData.Rows)
+                    {
+                        writer.WriteLine($"{row["SchedulerID"]}, {row["Course"]}, {row["Professor"]}, {row["Duration"]}, {row["Semester"]}, {row["FinalDay"]}, {row["FinalStartTime"]}, {row["FinalRoom"]}");
+                    }
+                }
+
+                MessageBox.Show($"Scheduler data has been exported to the file '{fileName}' on the desktop successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+
+        private void printAllButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQLiteConnection con = Database.GetConnection();
+                //con.Open();
+
+                // Get the names of all tables in the database
+                List<string> tableNames = new List<string>();
+                using (SQLiteCommand cmd = new SQLiteCommand("SELECT name FROM sqlite_master WHERE type='table'", con))
+                {
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            tableNames.Add(reader.GetString(0));
+                        }
+                    }
+                }
+
+                // Get the path to the desktop folder
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                // Create a directory named "UniTimetableSchedulerData" on the desktop if it doesn't exist
+                string directoryPath = Path.Combine(desktopPath, "UniTimetableSchedulerData");
+                if (!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+
+                string filePath = Path.Combine(directoryPath, "AllData.txt");
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    // Iterate over each table
+                    foreach (string tableName in tableNames)
+                    {
+                        DataTable tableData = LoadTableDataFromDatabase(con, tableName);
+
+                        // Write table name as a header
+                        writer.WriteLine($"Table: {tableName}");
+
+                        // Write rows
+                        foreach (DataRow row in tableData.Rows)
+                        {
+                            string rowData = string.Join(", ", row.ItemArray);
+                            writer.WriteLine(rowData);
+                        }
+
+                        // Separate tables with a blank line
+                        writer.WriteLine();
+                    }
+                }
+
+                MessageBox.Show($"All data from all tables has been exported to the file 'AllData.txt' on the desktop successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+
+        private DataTable LoadTableDataFromDatabase(SQLiteConnection con, string tableName)
+        {
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                string query = $"SELECT * FROM {tableName}";
+
+                using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, con))
+                {
+                    adapter.Fill(dataTable);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while loading data from the table '{tableName}': {ex.Message}");
+            }
+
+            return dataTable;
+        }
+
         private void schedulerIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsNumber(e.KeyChar) & (Keys)e.KeyChar != Keys.Back)
@@ -529,29 +887,7 @@ namespace Scheduler.WinForm
             }
         }
 
-        private void schedulerCourseComboBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsNumber(e.KeyChar) & (Keys)e.KeyChar != Keys.Back)
-            {
-                e.Handled = true;
-            }
-        }
 
-        private void schedulerProfessorComboBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsNumber(e.KeyChar) & (Keys)e.KeyChar != Keys.Back)
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void schedulerSemesterComboBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsNumber(e.KeyChar) & (Keys)e.KeyChar != Keys.Back)
-            {
-                e.Handled = true;
-            }
-        }
     }
 }
 

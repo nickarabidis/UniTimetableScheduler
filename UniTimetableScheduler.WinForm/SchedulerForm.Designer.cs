@@ -62,6 +62,9 @@
             addButton = new Button();
             generatedSchedulerButton = new Button();
             fitAndGenValueLabel = new Label();
+            deleteAllButton = new Button();
+            printButton = new Button();
+            printAllButton = new Button();
             ((System.ComponentModel.ISupportInitialize)schedulerDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)schedulerErrorProvider).BeginInit();
             SuspendLayout();
@@ -73,20 +76,20 @@
             schedulerCourseLabel.Location = new Point(146, 66);
             schedulerCourseLabel.Margin = new Padding(4, 0, 4, 0);
             schedulerCourseLabel.Name = "schedulerCourseLabel";
-            schedulerCourseLabel.Size = new Size(67, 17);
+            schedulerCourseLabel.Size = new Size(52, 17);
             schedulerCourseLabel.TabIndex = 3;
-            schedulerCourseLabel.Text = "Course Id:";
+            schedulerCourseLabel.Text = "Course:";
             // 
             // schedulerProfessorLabel
             // 
             schedulerProfessorLabel.AutoSize = true;
             schedulerProfessorLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            schedulerProfessorLabel.Location = new Point(269, 66);
+            schedulerProfessorLabel.Location = new Point(301, 66);
             schedulerProfessorLabel.Margin = new Padding(4, 0, 4, 0);
             schedulerProfessorLabel.Name = "schedulerProfessorLabel";
-            schedulerProfessorLabel.Size = new Size(82, 17);
+            schedulerProfessorLabel.Size = new Size(67, 17);
             schedulerProfessorLabel.TabIndex = 4;
-            schedulerProfessorLabel.Text = "Professor Id:";
+            schedulerProfessorLabel.Text = "Professor:";
             // 
             // headerTextLabel
             // 
@@ -95,20 +98,20 @@
             headerTextLabel.Location = new Point(184, 22);
             headerTextLabel.Margin = new Padding(4, 0, 4, 0);
             headerTextLabel.Name = "headerTextLabel";
-            headerTextLabel.Size = new Size(288, 25);
+            headerTextLabel.Size = new Size(304, 25);
             headerTextLabel.TabIndex = 8;
-            headerTextLabel.Text = "Put the inputs for the scheduler:";
+            headerTextLabel.Text = "Enter the inputs for the scheduler:";
             // 
             // schedulerSemesterLabel
             // 
             schedulerSemesterLabel.AutoSize = true;
             schedulerSemesterLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            schedulerSemesterLabel.Location = new Point(518, 66);
+            schedulerSemesterLabel.Location = new Point(550, 66);
             schedulerSemesterLabel.Margin = new Padding(4, 0, 4, 0);
             schedulerSemesterLabel.Name = "schedulerSemesterLabel";
-            schedulerSemesterLabel.Size = new Size(80, 17);
+            schedulerSemesterLabel.Size = new Size(65, 17);
             schedulerSemesterLabel.TabIndex = 9;
-            schedulerSemesterLabel.Text = "Semester Id:";
+            schedulerSemesterLabel.Text = "Semester:";
             // 
             // schedulerDataGridView
             // 
@@ -128,7 +131,7 @@
             schedulerDataGridView.Margin = new Padding(4);
             schedulerDataGridView.Name = "schedulerDataGridView";
             schedulerDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            schedulerDataGridView.Size = new Size(612, 372);
+            schedulerDataGridView.Size = new Size(644, 372);
             schedulerDataGridView.TabIndex = 15;
             schedulerDataGridView.MouseDoubleClick += schedulerDataGridView_MouseDoubleClick;
             // 
@@ -146,9 +149,9 @@
             // 
             // dgProfessor
             // 
-            dgProfessor.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgProfessor.HeaderText = "Professor";
             dgProfessor.Name = "dgProfessor";
+            dgProfessor.Width = 150;
             // 
             // dgDuration
             // 
@@ -193,12 +196,11 @@
             // schedulerSemesterComboBox
             // 
             schedulerSemesterComboBox.FormattingEnabled = true;
-            schedulerSemesterComboBox.Location = new Point(521, 92);
+            schedulerSemesterComboBox.Location = new Point(553, 92);
             schedulerSemesterComboBox.Margin = new Padding(4);
             schedulerSemesterComboBox.Name = "schedulerSemesterComboBox";
             schedulerSemesterComboBox.Size = new Size(116, 25);
             schedulerSemesterComboBox.TabIndex = 22;
-            schedulerSemesterComboBox.KeyPress += schedulerSemesterComboBox_KeyPress;
             // 
             // totalCoursesLabel
             // 
@@ -226,7 +228,7 @@
             // 
             schedulerDurationLabel.AutoSize = true;
             schedulerDurationLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            schedulerDurationLabel.Location = new Point(394, 65);
+            schedulerDurationLabel.Location = new Point(426, 65);
             schedulerDurationLabel.Margin = new Padding(4, 0, 4, 0);
             schedulerDurationLabel.Name = "schedulerDurationLabel";
             schedulerDurationLabel.Size = new Size(61, 17);
@@ -237,7 +239,7 @@
             // 
             totalProfessorValueLabel.AutoSize = true;
             totalProfessorValueLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            totalProfessorValueLabel.Location = new Point(621, 555);
+            totalProfessorValueLabel.Location = new Point(653, 555);
             totalProfessorValueLabel.Margin = new Padding(4, 0, 4, 0);
             totalProfessorValueLabel.Name = "totalProfessorValueLabel";
             totalProfessorValueLabel.Size = new Size(13, 15);
@@ -248,7 +250,7 @@
             // 
             totalProfessorsLabel.AutoSize = true;
             totalProfessorsLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            totalProfessorsLabel.Location = new Point(521, 555);
+            totalProfessorsLabel.Location = new Point(553, 555);
             totalProfessorsLabel.Margin = new Padding(4, 0, 4, 0);
             totalProfessorsLabel.Name = "totalProfessorsLabel";
             totalProfessorsLabel.Size = new Size(92, 15);
@@ -261,23 +263,21 @@
             schedulerCourseComboBox.Location = new Point(149, 92);
             schedulerCourseComboBox.Margin = new Padding(4);
             schedulerCourseComboBox.Name = "schedulerCourseComboBox";
-            schedulerCourseComboBox.Size = new Size(116, 25);
+            schedulerCourseComboBox.Size = new Size(148, 25);
             schedulerCourseComboBox.TabIndex = 38;
-            schedulerCourseComboBox.KeyPress += schedulerCourseComboBox_KeyPress;
             // 
             // schedulerProfessorComboBox
             // 
             schedulerProfessorComboBox.FormattingEnabled = true;
-            schedulerProfessorComboBox.Location = new Point(273, 92);
+            schedulerProfessorComboBox.Location = new Point(305, 92);
             schedulerProfessorComboBox.Margin = new Padding(4);
             schedulerProfessorComboBox.Name = "schedulerProfessorComboBox";
             schedulerProfessorComboBox.Size = new Size(116, 25);
             schedulerProfessorComboBox.TabIndex = 39;
-            schedulerProfessorComboBox.KeyPress += schedulerProfessorComboBox_KeyPress;
             // 
             // schedulerDurationTextBox
             // 
-            schedulerDurationTextBox.Location = new Point(397, 92);
+            schedulerDurationTextBox.Location = new Point(429, 92);
             schedulerDurationTextBox.Margin = new Padding(4);
             schedulerDurationTextBox.Name = "schedulerDurationTextBox";
             schedulerDurationTextBox.Size = new Size(116, 25);
@@ -287,7 +287,7 @@
             // generateButton
             // 
             generateButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            generateButton.Location = new Point(271, 583);
+            generateButton.Location = new Point(290, 583);
             generateButton.Margin = new Padding(4);
             generateButton.Name = "generateButton";
             generateButton.Size = new Size(104, 34);
@@ -329,7 +329,7 @@
             // 
             totalClassValueLabel.AutoSize = true;
             totalClassValueLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            totalClassValueLabel.Location = new Point(357, 555);
+            totalClassValueLabel.Location = new Point(376, 555);
             totalClassValueLabel.Margin = new Padding(4, 0, 4, 0);
             totalClassValueLabel.Name = "totalClassValueLabel";
             totalClassValueLabel.Size = new Size(13, 15);
@@ -340,7 +340,7 @@
             // 
             totalClassesLabel.AutoSize = true;
             totalClassesLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            totalClassesLabel.Location = new Point(273, 555);
+            totalClassesLabel.Location = new Point(292, 555);
             totalClassesLabel.Margin = new Padding(4, 0, 4, 0);
             totalClassesLabel.Name = "totalClassesLabel";
             totalClassesLabel.Size = new Size(76, 15);
@@ -362,7 +362,7 @@
             // generatedSchedulerButton
             // 
             generatedSchedulerButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            generatedSchedulerButton.Location = new Point(495, 583);
+            generatedSchedulerButton.Location = new Point(527, 583);
             generatedSchedulerButton.Margin = new Padding(4);
             generatedSchedulerButton.Name = "generatedSchedulerButton";
             generatedSchedulerButton.Size = new Size(142, 34);
@@ -381,12 +381,51 @@
             fitAndGenValueLabel.Size = new Size(0, 15);
             fitAndGenValueLabel.TabIndex = 70;
             // 
+            // deleteAllButton
+            // 
+            deleteAllButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteAllButton.Location = new Point(587, 131);
+            deleteAllButton.Margin = new Padding(4);
+            deleteAllButton.Name = "deleteAllButton";
+            deleteAllButton.Size = new Size(82, 34);
+            deleteAllButton.TabIndex = 71;
+            deleteAllButton.Text = "Delete All";
+            deleteAllButton.UseVisualStyleBackColor = true;
+            deleteAllButton.Click += deleteAllButton_Click;
+            // 
+            // printButton
+            // 
+            printButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            printButton.Location = new Point(25, 583);
+            printButton.Margin = new Padding(4);
+            printButton.Name = "printButton";
+            printButton.Size = new Size(80, 34);
+            printButton.TabIndex = 72;
+            printButton.Text = "Print Data";
+            printButton.UseVisualStyleBackColor = true;
+            printButton.Click += printButton_Click;
+            // 
+            // printAllButton
+            // 
+            printAllButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            printAllButton.Location = new Point(113, 583);
+            printAllButton.Margin = new Padding(4);
+            printAllButton.Name = "printAllButton";
+            printAllButton.Size = new Size(97, 34);
+            printAllButton.TabIndex = 73;
+            printAllButton.Text = "Print All Data";
+            printAllButton.UseVisualStyleBackColor = true;
+            printAllButton.Click += printAllButton_Click;
+            // 
             // SchedulerForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(682, 630);
+            ClientSize = new Size(688, 630);
+            Controls.Add(printAllButton);
+            Controls.Add(printButton);
+            Controls.Add(deleteAllButton);
             Controls.Add(fitAndGenValueLabel);
             Controls.Add(generatedSchedulerButton);
             Controls.Add(addButton);
@@ -449,13 +488,16 @@
         private System.Windows.Forms.Label schedulerIdLabel;
         private System.Windows.Forms.Label totalClassValueLabel;
         private System.Windows.Forms.Label totalClassesLabel;
+        private Button addButton;
+        private Button generatedSchedulerButton;
+        private Label fitAndGenValueLabel;
+        private Button deleteAllButton;
         private DataGridViewTextBoxColumn dgSchedulerId;
         private DataGridViewTextBoxColumn dgCourse;
         private DataGridViewTextBoxColumn dgProfessor;
         private DataGridViewTextBoxColumn dgDuration;
         private DataGridViewTextBoxColumn dgSemester;
-        private Button addButton;
-        private Button generatedSchedulerButton;
-        private Label fitAndGenValueLabel;
+        private Button printButton;
+        private Button printAllButton;
     }
 }

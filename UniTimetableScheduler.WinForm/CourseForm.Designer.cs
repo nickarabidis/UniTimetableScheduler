@@ -49,6 +49,8 @@
             courseErrorProvider = new ErrorProvider(components);
             courseLabLabel = new Label();
             courseLabComboBox = new ComboBox();
+            deleteAllButton = new Button();
+            printButton = new Button();
             ((System.ComponentModel.ISupportInitialize)courseDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)courseErrorProvider).BeginInit();
             SuspendLayout();
@@ -172,9 +174,9 @@
             // courseClearButton
             // 
             courseClearButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            courseClearButton.Location = new Point(344, 147);
+            courseClearButton.Location = new Point(328, 147);
             courseClearButton.Name = "courseClearButton";
-            courseClearButton.Size = new Size(100, 35);
+            courseClearButton.Size = new Size(77, 35);
             courseClearButton.TabIndex = 29;
             courseClearButton.Text = "Clear";
             courseClearButton.UseVisualStyleBackColor = true;
@@ -183,9 +185,9 @@
             // courseDeleteButton
             // 
             courseDeleteButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            courseDeleteButton.Location = new Point(238, 147);
+            courseDeleteButton.Location = new Point(244, 147);
             courseDeleteButton.Name = "courseDeleteButton";
-            courseDeleteButton.Size = new Size(100, 35);
+            courseDeleteButton.Size = new Size(77, 35);
             courseDeleteButton.TabIndex = 28;
             courseDeleteButton.Text = "Delete";
             courseDeleteButton.UseVisualStyleBackColor = true;
@@ -194,9 +196,9 @@
             // courseAddButton
             // 
             courseAddButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            courseAddButton.Location = new Point(132, 147);
+            courseAddButton.Location = new Point(161, 147);
             courseAddButton.Name = "courseAddButton";
-            courseAddButton.Size = new Size(100, 35);
+            courseAddButton.Size = new Size(77, 35);
             courseAddButton.TabIndex = 27;
             courseAddButton.Text = "Add";
             courseAddButton.UseVisualStyleBackColor = true;
@@ -225,12 +227,37 @@
             courseLabComboBox.Size = new Size(146, 25);
             courseLabComboBox.TabIndex = 34;
             // 
+            // deleteAllButton
+            // 
+            deleteAllButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteAllButton.Location = new Point(422, 147);
+            deleteAllButton.Name = "deleteAllButton";
+            deleteAllButton.Size = new Size(77, 35);
+            deleteAllButton.TabIndex = 35;
+            deleteAllButton.Text = "Delete All";
+            deleteAllButton.UseVisualStyleBackColor = true;
+            deleteAllButton.Click += deleteAllButton_Click;
+            // 
+            // printButton
+            // 
+            printButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            printButton.Location = new Point(422, 430);
+            printButton.Margin = new Padding(4);
+            printButton.Name = "printButton";
+            printButton.Size = new Size(77, 34);
+            printButton.TabIndex = 73;
+            printButton.Text = "Print Data";
+            printButton.UseVisualStyleBackColor = true;
+            printButton.Click += printButton_Click;
+            // 
             // CourseForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(576, 472);
+            Controls.Add(printButton);
+            Controls.Add(deleteAllButton);
             Controls.Add(courseLabComboBox);
             Controls.Add(courseLabLabel);
             Controls.Add(courseClearButton);
@@ -276,5 +303,7 @@
         private DataGridViewTextBoxColumn dgCourseId;
         private DataGridViewTextBoxColumn dgCourseName;
         private DataGridViewTextBoxColumn dgCourseLab;
+        private Button deleteAllButton;
+        private Button printButton;
     }
 }

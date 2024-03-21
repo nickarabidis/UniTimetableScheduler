@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniTimetableScheduler.Model
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniTimetableScheduler.Algorithm", "UniTimetableScheduler.Algorithm\UniTimetableScheduler.Algorithm.csproj", "{62E97C53-43E1-4093-8EE8-A3249B97FC57}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "UniTimetableSchedulerSetup", "UniTimetableSchedulerSetup\UniTimetableSchedulerSetup.vdproj", "{9CA0F639-F3BD-492B-9C62-1F8FDAA2EDE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,8 @@ Global
 		{62E97C53-43E1-4093-8EE8-A3249B97FC57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62E97C53-43E1-4093-8EE8-A3249B97FC57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62E97C53-43E1-4093-8EE8-A3249B97FC57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CA0F639-F3BD-492B-9C62-1F8FDAA2EDE8}.Debug|Any CPU.ActiveCfg = Debug
+		{9CA0F639-F3BD-492B-9C62-1F8FDAA2EDE8}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

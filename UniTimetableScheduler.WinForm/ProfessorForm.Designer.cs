@@ -48,6 +48,8 @@
             professorDeleteButton = new Button();
             professorAddButton = new Button();
             professorErrorProvider = new ErrorProvider(components);
+            deleteAllButton = new Button();
+            printButton = new Button();
             ((System.ComponentModel.ISupportInitialize)professorDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)professorErrorProvider).BeginInit();
             SuspendLayout();
@@ -182,7 +184,7 @@
             professorClearButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             professorClearButton.Location = new Point(349, 160);
             professorClearButton.Name = "professorClearButton";
-            professorClearButton.Size = new Size(100, 35);
+            professorClearButton.Size = new Size(77, 35);
             professorClearButton.TabIndex = 42;
             professorClearButton.Text = "Clear";
             professorClearButton.UseVisualStyleBackColor = true;
@@ -191,9 +193,9 @@
             // professorDeleteButton
             // 
             professorDeleteButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            professorDeleteButton.Location = new Point(243, 160);
+            professorDeleteButton.Location = new Point(266, 160);
             professorDeleteButton.Name = "professorDeleteButton";
-            professorDeleteButton.Size = new Size(100, 35);
+            professorDeleteButton.Size = new Size(77, 35);
             professorDeleteButton.TabIndex = 41;
             professorDeleteButton.Text = "Delete";
             professorDeleteButton.UseVisualStyleBackColor = true;
@@ -202,9 +204,9 @@
             // professorAddButton
             // 
             professorAddButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            professorAddButton.Location = new Point(137, 160);
+            professorAddButton.Location = new Point(182, 160);
             professorAddButton.Name = "professorAddButton";
-            professorAddButton.Size = new Size(100, 35);
+            professorAddButton.Size = new Size(78, 35);
             professorAddButton.TabIndex = 40;
             professorAddButton.Text = "Add";
             professorAddButton.UseVisualStyleBackColor = true;
@@ -214,12 +216,37 @@
             // 
             professorErrorProvider.ContainerControl = this;
             // 
+            // deleteAllButton
+            // 
+            deleteAllButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteAllButton.Location = new Point(460, 160);
+            deleteAllButton.Name = "deleteAllButton";
+            deleteAllButton.Size = new Size(77, 35);
+            deleteAllButton.TabIndex = 43;
+            deleteAllButton.Text = "Delete All";
+            deleteAllButton.UseVisualStyleBackColor = true;
+            deleteAllButton.Click += deleteAllButton_Click;
+            // 
+            // printButton
+            // 
+            printButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            printButton.Location = new Point(460, 443);
+            printButton.Margin = new Padding(4);
+            printButton.Name = "printButton";
+            printButton.Size = new Size(77, 34);
+            printButton.TabIndex = 74;
+            printButton.Text = "Print Data";
+            printButton.UseVisualStyleBackColor = true;
+            printButton.Click += printButton_Click;
+            // 
             // ProfessorForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(585, 484);
+            Controls.Add(printButton);
+            Controls.Add(deleteAllButton);
             Controls.Add(professorClearButton);
             Controls.Add(professorDeleteButton);
             Controls.Add(professorAddButton);
@@ -265,5 +292,7 @@
         private DataGridViewTextBoxColumn dgProfessorId;
         private DataGridViewTextBoxColumn dgProfessorName;
         private DataGridViewTextBoxColumn dgProfessorMeeting;
+        private Button deleteAllButton;
+        private Button printButton;
     }
 }

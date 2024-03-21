@@ -35,9 +35,9 @@
             professorsToolStripMenuItem = new ToolStripMenuItem();
             roomsToolStripMenuItem = new ToolStripMenuItem();
             periodsToolStripMenuItem = new ToolStripMenuItem();
-            schedulerToolStripMenuItem = new ToolStripMenuItem();
-            preferencesToolStripMenuItem = new ToolStripMenuItem();
             dependenciesToolStripMenuItem = new ToolStripMenuItem();
+            preferencesToolStripMenuItem = new ToolStripMenuItem();
+            schedulerToolStripMenuItem = new ToolStripMenuItem();
             statusStrip = new StatusStrip();
             toolStripStatusLabel = new ToolStripStatusLabel();
             toolTip = new ToolTip(components);
@@ -47,7 +47,7 @@
             // 
             // menuStrip
             // 
-            menuStrip.Items.AddRange(new ToolStripItem[] { coursesToolStripMenuItem, professorsToolStripMenuItem, roomsToolStripMenuItem, periodsToolStripMenuItem, dependenciesToolStripMenuItem, preferencesToolStripMenuItem, schedulerToolStripMenuItem });
+            menuStrip.Items.AddRange(new ToolStripItem[] { coursesToolStripMenuItem, professorsToolStripMenuItem, roomsToolStripMenuItem, periodsToolStripMenuItem, preferencesToolStripMenuItem, dependenciesToolStripMenuItem, schedulerToolStripMenuItem });
             menuStrip.Location = new Point(0, 0);
             menuStrip.Name = "menuStrip";
             menuStrip.Padding = new Padding(7, 2, 0, 2);
@@ -83,12 +83,12 @@
             periodsToolStripMenuItem.Text = "Periods";
             periodsToolStripMenuItem.Click += periodsToolStripMenuItem_Click;
             // 
-            // schedulerToolStripMenuItem
+            // dependenciesToolStripMenuItem
             // 
-            schedulerToolStripMenuItem.Name = "schedulerToolStripMenuItem";
-            schedulerToolStripMenuItem.Size = new Size(71, 20);
-            schedulerToolStripMenuItem.Text = "Scheduler";
-            schedulerToolStripMenuItem.Click += schedulerToolStripMenuItem_Click;
+            dependenciesToolStripMenuItem.Name = "dependenciesToolStripMenuItem";
+            dependenciesToolStripMenuItem.Size = new Size(93, 20);
+            dependenciesToolStripMenuItem.Text = "Dependencies";
+            dependenciesToolStripMenuItem.Click += dependenciesToolStripMenuItem_Click;
             // 
             // preferencesToolStripMenuItem
             // 
@@ -97,12 +97,12 @@
             preferencesToolStripMenuItem.Text = "Preferences";
             preferencesToolStripMenuItem.Click += preferencesToolStripMenuItem_Click;
             // 
-            // dependenciesToolStripMenuItem
+            // schedulerToolStripMenuItem
             // 
-            dependenciesToolStripMenuItem.Name = "dependenciesToolStripMenuItem";
-            dependenciesToolStripMenuItem.Size = new Size(93, 20);
-            dependenciesToolStripMenuItem.Text = "Dependencies";
-            dependenciesToolStripMenuItem.Click += dependenciesToolStripMenuItem_Click;
+            schedulerToolStripMenuItem.Name = "schedulerToolStripMenuItem";
+            schedulerToolStripMenuItem.Size = new Size(71, 20);
+            schedulerToolStripMenuItem.Text = "Scheduler";
+            schedulerToolStripMenuItem.Click += schedulerToolStripMenuItem_Click;
             // 
             // statusStrip
             // 

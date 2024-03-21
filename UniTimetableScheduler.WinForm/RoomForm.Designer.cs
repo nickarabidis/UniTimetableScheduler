@@ -48,6 +48,8 @@
             roomErrorProvider = new ErrorProvider(components);
             totalRoomValueLabel = new Label();
             totalRoomsLabel = new Label();
+            deleteAllButton = new Button();
+            printButton = new Button();
             ((System.ComponentModel.ISupportInitialize)roomDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)roomErrorProvider).BeginInit();
             SuspendLayout();
@@ -162,7 +164,7 @@
             roomClearButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             roomClearButton.Location = new Point(352, 172);
             roomClearButton.Name = "roomClearButton";
-            roomClearButton.Size = new Size(100, 35);
+            roomClearButton.Size = new Size(78, 35);
             roomClearButton.TabIndex = 35;
             roomClearButton.Text = "Clear";
             roomClearButton.UseVisualStyleBackColor = true;
@@ -171,9 +173,9 @@
             // roomDeleteButton
             // 
             roomDeleteButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            roomDeleteButton.Location = new Point(246, 172);
+            roomDeleteButton.Location = new Point(268, 172);
             roomDeleteButton.Name = "roomDeleteButton";
-            roomDeleteButton.Size = new Size(100, 35);
+            roomDeleteButton.Size = new Size(78, 35);
             roomDeleteButton.TabIndex = 34;
             roomDeleteButton.Text = "Delete";
             roomDeleteButton.UseVisualStyleBackColor = true;
@@ -182,9 +184,9 @@
             // roomAddButton
             // 
             roomAddButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            roomAddButton.Location = new Point(140, 172);
+            roomAddButton.Location = new Point(184, 172);
             roomAddButton.Name = "roomAddButton";
-            roomAddButton.Size = new Size(100, 35);
+            roomAddButton.Size = new Size(78, 35);
             roomAddButton.TabIndex = 33;
             roomAddButton.Text = "Add";
             roomAddButton.UseVisualStyleBackColor = true;
@@ -214,12 +216,37 @@
             totalRoomsLabel.TabIndex = 40;
             totalRoomsLabel.Text = "Total Rooms:";
             // 
+            // deleteAllButton
+            // 
+            deleteAllButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteAllButton.Location = new Point(463, 172);
+            deleteAllButton.Name = "deleteAllButton";
+            deleteAllButton.Size = new Size(77, 35);
+            deleteAllButton.TabIndex = 42;
+            deleteAllButton.Text = "Delete All";
+            deleteAllButton.UseVisualStyleBackColor = true;
+            deleteAllButton.Click += deleteAllButton_Click;
+            // 
+            // printButton
+            // 
+            printButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            printButton.Location = new Point(463, 455);
+            printButton.Margin = new Padding(4);
+            printButton.Name = "printButton";
+            printButton.Size = new Size(77, 34);
+            printButton.TabIndex = 75;
+            printButton.Text = "Print Data";
+            printButton.UseVisualStyleBackColor = true;
+            printButton.Click += printButton_Click;
+            // 
             // RoomForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(598, 485);
+            ClientSize = new Size(598, 503);
+            Controls.Add(printButton);
+            Controls.Add(deleteAllButton);
             Controls.Add(totalRoomValueLabel);
             Controls.Add(totalRoomsLabel);
             Controls.Add(roomClearButton);
@@ -265,5 +292,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgRoomId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgRoomName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgRoomLab;
+        private Button deleteAllButton;
+        private Button printButton;
     }
 }

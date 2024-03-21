@@ -73,6 +73,12 @@
             roomSchedulerIdLabel = new Label();
             roomIdLabel = new Label();
             preferenceErrorProvider = new ErrorProvider(components);
+            deleteAllPreferredDayButton = new Button();
+            deleteAllPreferredStartTimeButton = new Button();
+            deleteAllPreferredRoomButton = new Button();
+            printPreferredDayButton = new Button();
+            printPreferredStartTimeButton = new Button();
+            printPreferredRoomButton = new Button();
             ((System.ComponentModel.ISupportInitialize)preferredDayDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)preferredStartTimeDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)preferredRoomDataGridView).BeginInit();
@@ -83,7 +89,7 @@
             // 
             totalPreferredDayValueLabel.AutoSize = true;
             totalPreferredDayValueLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            totalPreferredDayValueLabel.Location = new Point(177, 406);
+            totalPreferredDayValueLabel.Location = new Point(236, 444);
             totalPreferredDayValueLabel.Name = "totalPreferredDayValueLabel";
             totalPreferredDayValueLabel.Size = new Size(13, 15);
             totalPreferredDayValueLabel.TabIndex = 74;
@@ -93,7 +99,7 @@
             // 
             totalPreferredDaysLabel.AutoSize = true;
             totalPreferredDaysLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            totalPreferredDaysLabel.Location = new Point(57, 406);
+            totalPreferredDaysLabel.Location = new Point(116, 444);
             totalPreferredDaysLabel.Name = "totalPreferredDaysLabel";
             totalPreferredDaysLabel.Size = new Size(114, 15);
             totalPreferredDaysLabel.TabIndex = 73;
@@ -102,7 +108,7 @@
             // dayClearButton
             // 
             dayClearButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dayClearButton.Location = new Point(210, 167);
+            dayClearButton.Location = new Point(230, 167);
             dayClearButton.Name = "dayClearButton";
             dayClearButton.Size = new Size(70, 35);
             dayClearButton.TabIndex = 72;
@@ -113,7 +119,7 @@
             // dayDeleteButton
             // 
             dayDeleteButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dayDeleteButton.Location = new Point(134, 167);
+            dayDeleteButton.Location = new Point(154, 167);
             dayDeleteButton.Name = "dayDeleteButton";
             dayDeleteButton.Size = new Size(70, 35);
             dayDeleteButton.TabIndex = 71;
@@ -124,7 +130,7 @@
             // dayAddButton
             // 
             dayAddButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dayAddButton.Location = new Point(60, 167);
+            dayAddButton.Location = new Point(78, 167);
             dayAddButton.Name = "dayAddButton";
             dayAddButton.Size = new Size(70, 35);
             dayAddButton.TabIndex = 70;
@@ -149,7 +155,7 @@
             preferredDayDataGridView.Location = new Point(60, 208);
             preferredDayDataGridView.Name = "preferredDayDataGridView";
             preferredDayDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            preferredDayDataGridView.Size = new Size(220, 195);
+            preferredDayDataGridView.Size = new Size(250, 195);
             preferredDayDataGridView.TabIndex = 69;
             preferredDayDataGridView.MouseDoubleClick += preferredDayDataGridView_MouseDoubleClick;
             // 
@@ -169,7 +175,7 @@
             // 
             preferredDayLabel.AutoSize = true;
             preferredDayLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            preferredDayLabel.Location = new Point(103, 62);
+            preferredDayLabel.Location = new Point(116, 62);
             preferredDayLabel.Name = "preferredDayLabel";
             preferredDayLabel.Size = new Size(140, 25);
             preferredDayLabel.TabIndex = 68;
@@ -200,7 +206,7 @@
             daySchedulerIdComboBox.FormattingEnabled = true;
             daySchedulerIdComboBox.Location = new Point(142, 103);
             daySchedulerIdComboBox.Name = "daySchedulerIdComboBox";
-            daySchedulerIdComboBox.Size = new Size(138, 25);
+            daySchedulerIdComboBox.Size = new Size(168, 25);
             daySchedulerIdComboBox.TabIndex = 75;
             daySchedulerIdComboBox.KeyPress += daySchedulerIdComboBox_KeyPress;
             // 
@@ -209,14 +215,14 @@
             dayIdComboBox.FormattingEnabled = true;
             dayIdComboBox.Location = new Point(142, 136);
             dayIdComboBox.Name = "dayIdComboBox";
-            dayIdComboBox.Size = new Size(138, 25);
+            dayIdComboBox.Size = new Size(168, 25);
             dayIdComboBox.TabIndex = 76;
             dayIdComboBox.KeyPress += dayIdComboBox_KeyPress;
             // 
             // startTimeIdComboBox
             // 
             startTimeIdComboBox.FormattingEnabled = true;
-            startTimeIdComboBox.Location = new Point(421, 136);
+            startTimeIdComboBox.Location = new Point(447, 136);
             startTimeIdComboBox.Name = "startTimeIdComboBox";
             startTimeIdComboBox.Size = new Size(171, 25);
             startTimeIdComboBox.TabIndex = 87;
@@ -225,7 +231,7 @@
             // startTimeSchedulerIdComboBox
             // 
             startTimeSchedulerIdComboBox.FormattingEnabled = true;
-            startTimeSchedulerIdComboBox.Location = new Point(421, 103);
+            startTimeSchedulerIdComboBox.Location = new Point(447, 103);
             startTimeSchedulerIdComboBox.Name = "startTimeSchedulerIdComboBox";
             startTimeSchedulerIdComboBox.Size = new Size(171, 25);
             startTimeSchedulerIdComboBox.TabIndex = 86;
@@ -235,7 +241,7 @@
             // 
             totalPreferredStartTimeValueLabel.AutoSize = true;
             totalPreferredStartTimeValueLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            totalPreferredStartTimeValueLabel.Location = new Point(487, 406);
+            totalPreferredStartTimeValueLabel.Location = new Point(568, 444);
             totalPreferredStartTimeValueLabel.Name = "totalPreferredStartTimeValueLabel";
             totalPreferredStartTimeValueLabel.Size = new Size(13, 15);
             totalPreferredStartTimeValueLabel.TabIndex = 85;
@@ -245,7 +251,7 @@
             // 
             totalPreferredStartTimesLabel.AutoSize = true;
             totalPreferredStartTimesLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            totalPreferredStartTimesLabel.Location = new Point(337, 406);
+            totalPreferredStartTimesLabel.Location = new Point(418, 444);
             totalPreferredStartTimesLabel.Name = "totalPreferredStartTimesLabel";
             totalPreferredStartTimesLabel.Size = new Size(144, 15);
             totalPreferredStartTimesLabel.TabIndex = 84;
@@ -254,7 +260,7 @@
             // startTimeClearButton
             // 
             startTimeClearButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            startTimeClearButton.Location = new Point(509, 167);
+            startTimeClearButton.Location = new Point(535, 167);
             startTimeClearButton.Name = "startTimeClearButton";
             startTimeClearButton.Size = new Size(70, 35);
             startTimeClearButton.TabIndex = 83;
@@ -265,7 +271,7 @@
             // startTimeDeleteButton
             // 
             startTimeDeleteButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            startTimeDeleteButton.Location = new Point(433, 167);
+            startTimeDeleteButton.Location = new Point(459, 167);
             startTimeDeleteButton.Name = "startTimeDeleteButton";
             startTimeDeleteButton.Size = new Size(70, 35);
             startTimeDeleteButton.TabIndex = 82;
@@ -276,7 +282,7 @@
             // startTimeAddButton
             // 
             startTimeAddButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            startTimeAddButton.Location = new Point(357, 167);
+            startTimeAddButton.Location = new Point(383, 167);
             startTimeAddButton.Name = "startTimeAddButton";
             startTimeAddButton.Size = new Size(70, 35);
             startTimeAddButton.TabIndex = 81;
@@ -288,7 +294,7 @@
             // 
             preferredStartTimeLabel.AutoSize = true;
             preferredStartTimeLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            preferredStartTimeLabel.Location = new Point(376, 62);
+            preferredStartTimeLabel.Location = new Point(402, 62);
             preferredStartTimeLabel.Name = "preferredStartTimeLabel";
             preferredStartTimeLabel.Size = new Size(192, 25);
             preferredStartTimeLabel.TabIndex = 79;
@@ -298,7 +304,7 @@
             // 
             startTimeSchedulerIdLabel.AutoSize = true;
             startTimeSchedulerIdLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            startTimeSchedulerIdLabel.Location = new Point(335, 106);
+            startTimeSchedulerIdLabel.Location = new Point(361, 106);
             startTimeSchedulerIdLabel.Name = "startTimeSchedulerIdLabel";
             startTimeSchedulerIdLabel.Size = new Size(83, 17);
             startTimeSchedulerIdLabel.TabIndex = 78;
@@ -308,7 +314,7 @@
             // 
             startTimeIdLabel.AutoSize = true;
             startTimeIdLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            startTimeIdLabel.Location = new Point(337, 139);
+            startTimeIdLabel.Location = new Point(363, 139);
             startTimeIdLabel.Name = "startTimeIdLabel";
             startTimeIdLabel.Size = new Size(81, 17);
             startTimeIdLabel.TabIndex = 77;
@@ -328,10 +334,10 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             preferredStartTimeDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            preferredStartTimeDataGridView.Location = new Point(340, 208);
+            preferredStartTimeDataGridView.Location = new Point(366, 208);
             preferredStartTimeDataGridView.Name = "preferredStartTimeDataGridView";
             preferredStartTimeDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            preferredStartTimeDataGridView.Size = new Size(252, 195);
+            preferredStartTimeDataGridView.Size = new Size(250, 195);
             preferredStartTimeDataGridView.TabIndex = 88;
             preferredStartTimeDataGridView.MouseDoubleClick += preferredStartTimeDataGridView_MouseDoubleClick;
             // 
@@ -350,18 +356,18 @@
             // roomIdComboBox
             // 
             roomIdComboBox.FormattingEnabled = true;
-            roomIdComboBox.Location = new Point(738, 136);
+            roomIdComboBox.Location = new Point(749, 136);
             roomIdComboBox.Name = "roomIdComboBox";
-            roomIdComboBox.Size = new Size(154, 25);
+            roomIdComboBox.Size = new Size(168, 25);
             roomIdComboBox.TabIndex = 99;
             roomIdComboBox.KeyPress += roomIdComboBox_KeyPress;
             // 
             // roomSchedulerIdComboBox
             // 
             roomSchedulerIdComboBox.FormattingEnabled = true;
-            roomSchedulerIdComboBox.Location = new Point(738, 103);
+            roomSchedulerIdComboBox.Location = new Point(749, 103);
             roomSchedulerIdComboBox.Name = "roomSchedulerIdComboBox";
-            roomSchedulerIdComboBox.Size = new Size(154, 25);
+            roomSchedulerIdComboBox.Size = new Size(168, 25);
             roomSchedulerIdComboBox.TabIndex = 98;
             roomSchedulerIdComboBox.KeyPress += roomSchedulerIdComboBox_KeyPress;
             // 
@@ -369,7 +375,7 @@
             // 
             totalPreferredRoomValueLabel.AutoSize = true;
             totalPreferredRoomValueLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            totalPreferredRoomValueLabel.Location = new Point(782, 406);
+            totalPreferredRoomValueLabel.Location = new Point(850, 444);
             totalPreferredRoomValueLabel.Name = "totalPreferredRoomValueLabel";
             totalPreferredRoomValueLabel.Size = new Size(13, 15);
             totalPreferredRoomValueLabel.TabIndex = 97;
@@ -379,7 +385,7 @@
             // 
             totalPreferredRoomsLabel.AutoSize = true;
             totalPreferredRoomsLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            totalPreferredRoomsLabel.Location = new Point(652, 406);
+            totalPreferredRoomsLabel.Location = new Point(720, 444);
             totalPreferredRoomsLabel.Name = "totalPreferredRoomsLabel";
             totalPreferredRoomsLabel.Size = new Size(126, 15);
             totalPreferredRoomsLabel.TabIndex = 96;
@@ -388,7 +394,7 @@
             // roomClearButton
             // 
             roomClearButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            roomClearButton.Location = new Point(817, 167);
+            roomClearButton.Location = new Point(833, 167);
             roomClearButton.Name = "roomClearButton";
             roomClearButton.Size = new Size(70, 35);
             roomClearButton.TabIndex = 95;
@@ -399,7 +405,7 @@
             // roomDeleteButton
             // 
             roomDeleteButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            roomDeleteButton.Location = new Point(741, 167);
+            roomDeleteButton.Location = new Point(757, 167);
             roomDeleteButton.Name = "roomDeleteButton";
             roomDeleteButton.Size = new Size(70, 35);
             roomDeleteButton.TabIndex = 94;
@@ -410,7 +416,7 @@
             // roomAddButton
             // 
             roomAddButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            roomAddButton.Location = new Point(665, 167);
+            roomAddButton.Location = new Point(681, 167);
             roomAddButton.Name = "roomAddButton";
             roomAddButton.Size = new Size(70, 35);
             roomAddButton.TabIndex = 93;
@@ -432,10 +438,10 @@
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             preferredRoomDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            preferredRoomDataGridView.Location = new Point(656, 208);
+            preferredRoomDataGridView.Location = new Point(667, 208);
             preferredRoomDataGridView.Name = "preferredRoomDataGridView";
             preferredRoomDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            preferredRoomDataGridView.Size = new Size(236, 195);
+            preferredRoomDataGridView.Size = new Size(250, 195);
             preferredRoomDataGridView.TabIndex = 92;
             preferredRoomDataGridView.MouseDoubleClick += preferredRoomDataGridView_MouseDoubleClick;
             // 
@@ -455,7 +461,7 @@
             // 
             preferredRoomLabel.AutoSize = true;
             preferredRoomLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            preferredRoomLabel.Location = new Point(696, 62);
+            preferredRoomLabel.Location = new Point(720, 62);
             preferredRoomLabel.Name = "preferredRoomLabel";
             preferredRoomLabel.Size = new Size(156, 25);
             preferredRoomLabel.TabIndex = 91;
@@ -465,7 +471,7 @@
             // 
             roomSchedulerIdLabel.AutoSize = true;
             roomSchedulerIdLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            roomSchedulerIdLabel.Location = new Point(652, 106);
+            roomSchedulerIdLabel.Location = new Point(663, 106);
             roomSchedulerIdLabel.Name = "roomSchedulerIdLabel";
             roomSchedulerIdLabel.Size = new Size(83, 17);
             roomSchedulerIdLabel.TabIndex = 90;
@@ -475,7 +481,7 @@
             // 
             roomIdLabel.AutoSize = true;
             roomIdLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            roomIdLabel.Location = new Point(674, 139);
+            roomIdLabel.Location = new Point(685, 139);
             roomIdLabel.Name = "roomIdLabel";
             roomIdLabel.Size = new Size(61, 17);
             roomIdLabel.TabIndex = 89;
@@ -485,12 +491,87 @@
             // 
             preferenceErrorProvider.ContainerControl = this;
             // 
+            // deleteAllPreferredDayButton
+            // 
+            deleteAllPreferredDayButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteAllPreferredDayButton.Location = new Point(237, 406);
+            deleteAllPreferredDayButton.Name = "deleteAllPreferredDayButton";
+            deleteAllPreferredDayButton.Size = new Size(73, 34);
+            deleteAllPreferredDayButton.TabIndex = 100;
+            deleteAllPreferredDayButton.Text = "Delete All";
+            deleteAllPreferredDayButton.UseVisualStyleBackColor = true;
+            deleteAllPreferredDayButton.Click += deleteAllPreferredDayButton_Click;
+            // 
+            // deleteAllPreferredStartTimeButton
+            // 
+            deleteAllPreferredStartTimeButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteAllPreferredStartTimeButton.Location = new Point(545, 406);
+            deleteAllPreferredStartTimeButton.Name = "deleteAllPreferredStartTimeButton";
+            deleteAllPreferredStartTimeButton.Size = new Size(73, 34);
+            deleteAllPreferredStartTimeButton.TabIndex = 101;
+            deleteAllPreferredStartTimeButton.Text = "Delete All";
+            deleteAllPreferredStartTimeButton.UseVisualStyleBackColor = true;
+            deleteAllPreferredStartTimeButton.Click += deleteAllPreferredStartTimeButton_Click;
+            // 
+            // deleteAllPreferredRoomButton
+            // 
+            deleteAllPreferredRoomButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteAllPreferredRoomButton.Location = new Point(844, 405);
+            deleteAllPreferredRoomButton.Name = "deleteAllPreferredRoomButton";
+            deleteAllPreferredRoomButton.Size = new Size(73, 34);
+            deleteAllPreferredRoomButton.TabIndex = 102;
+            deleteAllPreferredRoomButton.Text = "Delete All";
+            deleteAllPreferredRoomButton.UseVisualStyleBackColor = true;
+            deleteAllPreferredRoomButton.Click += deleteAllPreferredRoomButton_Click;
+            // 
+            // printPreferredDayButton
+            // 
+            printPreferredDayButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            printPreferredDayButton.Location = new Point(60, 406);
+            printPreferredDayButton.Margin = new Padding(4);
+            printPreferredDayButton.Name = "printPreferredDayButton";
+            printPreferredDayButton.Size = new Size(73, 34);
+            printPreferredDayButton.TabIndex = 103;
+            printPreferredDayButton.Text = "Print Data";
+            printPreferredDayButton.UseVisualStyleBackColor = true;
+            printPreferredDayButton.Click += printPreferredDayButton_Click;
+            // 
+            // printPreferredStartTimeButton
+            // 
+            printPreferredStartTimeButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            printPreferredStartTimeButton.Location = new Point(366, 406);
+            printPreferredStartTimeButton.Margin = new Padding(4);
+            printPreferredStartTimeButton.Name = "printPreferredStartTimeButton";
+            printPreferredStartTimeButton.Size = new Size(73, 34);
+            printPreferredStartTimeButton.TabIndex = 104;
+            printPreferredStartTimeButton.Text = "Print Data";
+            printPreferredStartTimeButton.UseVisualStyleBackColor = true;
+            printPreferredStartTimeButton.Click += printPreferredStartTimeButton_Click;
+            // 
+            // printPreferredRoomButton
+            // 
+            printPreferredRoomButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            printPreferredRoomButton.Location = new Point(667, 405);
+            printPreferredRoomButton.Margin = new Padding(4);
+            printPreferredRoomButton.Name = "printPreferredRoomButton";
+            printPreferredRoomButton.Size = new Size(73, 34);
+            printPreferredRoomButton.TabIndex = 105;
+            printPreferredRoomButton.Text = "Print Data";
+            printPreferredRoomButton.UseVisualStyleBackColor = true;
+            printPreferredRoomButton.Click += printPreferredRoomButton_Click;
+            // 
             // PreferenceForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(929, 437);
+            ClientSize = new Size(944, 477);
+            Controls.Add(printPreferredRoomButton);
+            Controls.Add(printPreferredStartTimeButton);
+            Controls.Add(printPreferredDayButton);
+            Controls.Add(deleteAllPreferredRoomButton);
+            Controls.Add(deleteAllPreferredStartTimeButton);
+            Controls.Add(deleteAllPreferredDayButton);
             Controls.Add(roomIdComboBox);
             Controls.Add(roomSchedulerIdComboBox);
             Controls.Add(totalPreferredRoomValueLabel);
@@ -581,5 +662,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgRoomSchedulerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgRoomID;
         private System.Windows.Forms.ErrorProvider preferenceErrorProvider;
+        private Button deleteAllPreferredRoomButton;
+        private Button deleteAllPreferredStartTimeButton;
+        private Button deleteAllPreferredDayButton;
+        private Button printPreferredRoomButton;
+        private Button printPreferredStartTimeButton;
+        private Button printPreferredDayButton;
     }
 }

@@ -625,5 +625,292 @@ namespace Scheduler.WinForm
                 e.Handled = true;
             }
         }
+
+        private void deleteAllPreferredDayButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to DELETE ALL the data?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                SQLiteConnection con = Database.GetConnection();
+
+                var sqlQuery = "";
+
+                sqlQuery = @"DELETE FROM [DayList]";
+                SQLiteCommand cmd = new SQLiteCommand(sqlQuery, con);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("All Records Deleted Successfully!");
+
+                LoadDataDay();
+                ClearRecordsDay();
+            }
+        }
+
+        private void deleteAllPreferredStartTimeButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to DELETE ALL the data?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                SQLiteConnection con = Database.GetConnection();
+
+                var sqlQuery = "";
+
+                sqlQuery = @"DELETE FROM [StartTimeList]";
+                SQLiteCommand cmd = new SQLiteCommand(sqlQuery, con);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("All Records Deleted Successfully!");
+
+                LoadDataStartTime();
+                ClearRecordsStartTime();
+            }
+        }
+
+        private void deleteAllPreferredRoomButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to DELETE ALL the data?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                SQLiteConnection con = Database.GetConnection();
+
+                var sqlQuery = "";
+
+                sqlQuery = @"DELETE FROM [RoomList]";
+                SQLiteCommand cmd = new SQLiteCommand(sqlQuery, con);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("All Records Deleted Successfully!");
+
+                LoadDataRoom();
+                ClearRecordsRoom();
+            }
+        }
+
+        private void printPreferredDayButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQLiteConnection con = Database.GetConnection();
+                DataTable data = LoadPreferredDayDataFromDatabase(con);
+
+                string fileName = "PreferredDayData.txt";
+                ExportPreferredDayDataToTxt(data, fileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+        private DataTable LoadPreferredDayDataFromDatabase(SQLiteConnection con)
+        {
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                //con.Open();
+                string query = "SELECT * FROM DayList";
+
+                using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, con))
+                {
+                    adapter.Fill(dataTable);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while loading data from the database: {ex.Message}");
+            }
+
+            return dataTable;
+        }
+
+        public void ExportPreferredDayDataToTxt(DataTable data, string fileName)
+        {
+            try
+            {
+                // Get the path to the desktop folder
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                // Create a directory named "UniTimetableSchedulerData" on the desktop if it doesn't exist
+                string directoryPath = Path.Combine(desktopPath, "UniTimetableSchedulerData");
+                if (!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+
+                // Combine the directory path and file name to get the full file path
+                string filePath = Path.Combine(directoryPath, fileName);
+
+                // Create or overwrite the file
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    // Write header
+                    writer.WriteLine("SchedulerID, DayID");
+
+                    // Write rows
+                    foreach (DataRow row in data.Rows)
+                    {
+                        writer.WriteLine($"{row["SchedulerID"]}, {row["DayID"]}");
+                    }
+                }
+
+                MessageBox.Show($"Preferred Day data has been exported to the file '{fileName}' on the desktop successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+
+
+        private void printPreferredStartTimeButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQLiteConnection con = Database.GetConnection();
+                DataTable data = LoadPreferredStartTimeDataFromDatabase(con);
+
+                string fileName = "PreferredStartTimeData.txt";
+                ExportPreferredStartTimeDataToTxt(data, fileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+        private DataTable LoadPreferredStartTimeDataFromDatabase(SQLiteConnection con)
+        {
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                //con.Open();
+                string query = "SELECT * FROM StartTimeList";
+
+                using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, con))
+                {
+                    adapter.Fill(dataTable);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while loading data from the database: {ex.Message}");
+            }
+
+            return dataTable;
+        }
+
+        public void ExportPreferredStartTimeDataToTxt(DataTable data, string fileName)
+        {
+            try
+            {
+                // Get the path to the desktop folder
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                // Create a directory named "UniTimetableSchedulerData" on the desktop if it doesn't exist
+                string directoryPath = Path.Combine(desktopPath, "UniTimetableSchedulerData");
+                if (!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+
+                // Combine the directory path and file name to get the full file path
+                string filePath = Path.Combine(directoryPath, fileName);
+
+                // Create or overwrite the file
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    // Write header
+                    writer.WriteLine("SchedulerID, StartTimeID");
+
+                    // Write rows
+                    foreach (DataRow row in data.Rows)
+                    {
+                        writer.WriteLine($"{row["SchedulerID"]}, {row["StartTimeID"]}");
+                    }
+                }
+
+                MessageBox.Show($"Preferred StartTime data has been exported to the file '{fileName}' on the desktop successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+
+        private void printPreferredRoomButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQLiteConnection con = Database.GetConnection();
+                DataTable data = LoadPreferredRoomDataFromDatabase(con);
+
+                string fileName = "PreferredRoomData.txt";
+                ExportPreferredRoomDataToTxt(data, fileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+
+        private DataTable LoadPreferredRoomDataFromDatabase(SQLiteConnection con)
+        {
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                //con.Open();
+                string query = "SELECT * FROM RoomList";
+
+                using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, con))
+                {
+                    adapter.Fill(dataTable);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while loading data from the database: {ex.Message}");
+            }
+
+            return dataTable;
+        }
+
+        public void ExportPreferredRoomDataToTxt(DataTable data, string fileName)
+        {
+            try
+            {
+                // Get the path to the desktop folder
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                // Create a directory named "UniTimetableSchedulerData" on the desktop if it doesn't exist
+                string directoryPath = Path.Combine(desktopPath, "UniTimetableSchedulerData");
+                if (!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+
+                // Combine the directory path and file name to get the full file path
+                string filePath = Path.Combine(directoryPath, fileName);
+
+                // Create or overwrite the file
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    // Write header
+                    writer.WriteLine("SchedulerID, RoomID");
+
+                    // Write rows
+                    foreach (DataRow row in data.Rows)
+                    {
+                        writer.WriteLine($"{row["SchedulerID"]}, {row["RoomID"]}");
+                    }
+                }
+
+                MessageBox.Show($"Preferred Room data has been exported to the file '{fileName}' on the desktop successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
     }
 }

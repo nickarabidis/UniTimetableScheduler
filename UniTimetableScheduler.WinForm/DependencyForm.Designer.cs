@@ -48,6 +48,8 @@
             totalDependenciesLabel = new Label();
             dependencyErrorProvider = new ErrorProvider(components);
             dependencyDependentCourseIdComboBox = new ComboBox();
+            deleteAllButton = new Button();
+            printButton = new Button();
             ((System.ComponentModel.ISupportInitialize)dependencyDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dependencyErrorProvider).BeginInit();
             SuspendLayout();
@@ -55,9 +57,9 @@
             // dependencyClearButton
             // 
             dependencyClearButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dependencyClearButton.Location = new Point(311, 163);
+            dependencyClearButton.Location = new Point(287, 163);
             dependencyClearButton.Name = "dependencyClearButton";
-            dependencyClearButton.Size = new Size(100, 35);
+            dependencyClearButton.Size = new Size(72, 35);
             dependencyClearButton.TabIndex = 38;
             dependencyClearButton.Text = "Clear";
             dependencyClearButton.UseVisualStyleBackColor = true;
@@ -66,9 +68,9 @@
             // dependencyDeleteButton
             // 
             dependencyDeleteButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dependencyDeleteButton.Location = new Point(205, 163);
+            dependencyDeleteButton.Location = new Point(209, 163);
             dependencyDeleteButton.Name = "dependencyDeleteButton";
-            dependencyDeleteButton.Size = new Size(100, 35);
+            dependencyDeleteButton.Size = new Size(72, 35);
             dependencyDeleteButton.TabIndex = 37;
             dependencyDeleteButton.Text = "Delete";
             dependencyDeleteButton.UseVisualStyleBackColor = true;
@@ -77,9 +79,9 @@
             // dependencyAddButton
             // 
             dependencyAddButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dependencyAddButton.Location = new Point(99, 163);
+            dependencyAddButton.Location = new Point(131, 163);
             dependencyAddButton.Name = "dependencyAddButton";
-            dependencyAddButton.Size = new Size(100, 35);
+            dependencyAddButton.Size = new Size(72, 35);
             dependencyAddButton.TabIndex = 36;
             dependencyAddButton.Text = "Add";
             dependencyAddButton.UseVisualStyleBackColor = true;
@@ -215,12 +217,37 @@
             dependencyDependentCourseIdComboBox.TabIndex = 48;
             dependencyDependentCourseIdComboBox.KeyPress += dependencyDependentCourseIdComboBox_KeyPress;
             // 
+            // deleteAllButton
+            // 
+            deleteAllButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteAllButton.Location = new Point(382, 163);
+            deleteAllButton.Name = "deleteAllButton";
+            deleteAllButton.Size = new Size(77, 35);
+            deleteAllButton.TabIndex = 49;
+            deleteAllButton.Text = "Delete All";
+            deleteAllButton.UseVisualStyleBackColor = true;
+            deleteAllButton.Click += deleteAllButton_Click;
+            // 
+            // printButton
+            // 
+            printButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            printButton.Location = new Point(382, 478);
+            printButton.Margin = new Padding(4);
+            printButton.Name = "printButton";
+            printButton.Size = new Size(77, 34);
+            printButton.TabIndex = 74;
+            printButton.Text = "Print Data";
+            printButton.UseVisualStyleBackColor = true;
+            printButton.Click += printButton_Click;
+            // 
             // DependencyForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(509, 523);
+            Controls.Add(printButton);
+            Controls.Add(deleteAllButton);
             Controls.Add(dependencyDependentCourseIdComboBox);
             Controls.Add(totalDependencyValueLabel);
             Controls.Add(totalDependenciesLabel);
@@ -266,5 +293,7 @@
         private DataGridViewTextBoxColumn dgDependencyCourseId;
         private DataGridViewTextBoxColumn dgDependencyDependentCourseId;
         private DataGridViewTextBoxColumn dgDependencyInHowManyDays;
+        private Button deleteAllButton;
+        private Button printButton;
     }
 }

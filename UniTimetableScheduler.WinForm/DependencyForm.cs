@@ -261,5 +261,102 @@ namespace Scheduler.WinForm
                 e.Handled = true;
             }
         }
+
+        private void deleteAllButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to DELETE ALL the data?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                SQLiteConnection con = Database.GetConnection();
+
+                var sqlQuery = "";
+
+                sqlQuery = @"DELETE FROM [Dependency]";
+                SQLiteCommand cmd = new SQLiteCommand(sqlQuery, con);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("All Records Deleted Successfully!");
+
+                LoadData();
+                ClearRecords();
+            }
+        }
+
+        private void printButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQLiteConnection con = Database.GetConnection();
+                DataTable data = LoadDataFromDatabase(con);
+
+                string fileName = "DependencyData.txt";
+                ExportDataToTxt(data, fileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+
+        }
+
+        private DataTable LoadDataFromDatabase(SQLiteConnection con)
+        {
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                //con.Open();
+                string query = "SELECT * FROM Dependency";
+
+                using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, con))
+                {
+                    adapter.Fill(dataTable);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while loading data from the database: {ex.Message}");
+            }
+
+            return dataTable;
+        }
+
+        public void ExportDataToTxt(DataTable data, string fileName)
+        {
+            try
+            {
+                // Get the path to the desktop folder
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                // Create a directory named "UniTimetableSchedulerData" on the desktop if it doesn't exist
+                string directoryPath = Path.Combine(desktopPath, "UniTimetableSchedulerData");
+                if (!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+
+                // Combine the directory path and file name to get the full file path
+                string filePath = Path.Combine(directoryPath, fileName);
+
+                // Create or overwrite the file
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    // Write header
+                    writer.WriteLine("1st SchedulerID, 2nd SchedulerID, InHowManyDays");
+
+                    // Write rows
+                    foreach (DataRow row in data.Rows)
+                    {
+                        writer.WriteLine($"{row["CourseID"]}, {row["DependentCourseID"]}, {row["InHowManyDays"]}");
+                    }
+                }
+
+                MessageBox.Show($"Dependency data has been exported to the file '{fileName}' on the desktop successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
     }
 }

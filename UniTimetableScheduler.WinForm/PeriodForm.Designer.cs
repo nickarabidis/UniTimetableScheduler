@@ -73,6 +73,12 @@
             totalDaysLabel = new Label();
             totalStartTimeValueLabel = new Label();
             totalStartTimesLabel = new Label();
+            deleteAllStartTimeButton = new Button();
+            deleteAllSemesterButton = new Button();
+            deleteAllDayButton = new Button();
+            printSemesterButton = new Button();
+            printDayButton = new Button();
+            printStartTimeButton = new Button();
             ((System.ComponentModel.ISupportInitialize)semesterDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dayDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)startTimeDataGridView).BeginInit();
@@ -432,7 +438,7 @@
             // 
             totalSemesterValueLabel.AutoSize = true;
             totalSemesterValueLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            totalSemesterValueLabel.Location = new Point(166, 357);
+            totalSemesterValueLabel.Location = new Point(217, 395);
             totalSemesterValueLabel.Name = "totalSemesterValueLabel";
             totalSemesterValueLabel.Size = new Size(13, 15);
             totalSemesterValueLabel.TabIndex = 61;
@@ -442,7 +448,7 @@
             // 
             totalSemestersLabel.AutoSize = true;
             totalSemestersLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            totalSemestersLabel.Location = new Point(69, 357);
+            totalSemestersLabel.Location = new Point(120, 395);
             totalSemestersLabel.Name = "totalSemestersLabel";
             totalSemestersLabel.Size = new Size(91, 15);
             totalSemestersLabel.TabIndex = 60;
@@ -452,7 +458,7 @@
             // 
             totalDayValueLabel.AutoSize = true;
             totalDayValueLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            totalDayValueLabel.Location = new Point(440, 357);
+            totalDayValueLabel.Location = new Point(501, 395);
             totalDayValueLabel.Name = "totalDayValueLabel";
             totalDayValueLabel.Size = new Size(13, 15);
             totalDayValueLabel.TabIndex = 63;
@@ -462,7 +468,7 @@
             // 
             totalDaysLabel.AutoSize = true;
             totalDaysLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            totalDaysLabel.Location = new Point(372, 357);
+            totalDaysLabel.Location = new Point(433, 395);
             totalDaysLabel.Name = "totalDaysLabel";
             totalDaysLabel.Size = new Size(63, 15);
             totalDaysLabel.TabIndex = 62;
@@ -472,7 +478,7 @@
             // 
             totalStartTimeValueLabel.AutoSize = true;
             totalStartTimeValueLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            totalStartTimeValueLabel.Location = new Point(772, 357);
+            totalStartTimeValueLabel.Location = new Point(816, 395);
             totalStartTimeValueLabel.Name = "totalStartTimeValueLabel";
             totalStartTimeValueLabel.Size = new Size(13, 15);
             totalStartTimeValueLabel.TabIndex = 65;
@@ -482,18 +488,93 @@
             // 
             totalStartTimesLabel.AutoSize = true;
             totalStartTimesLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            totalStartTimesLabel.Location = new Point(670, 357);
+            totalStartTimesLabel.Location = new Point(714, 395);
             totalStartTimesLabel.Name = "totalStartTimesLabel";
             totalStartTimesLabel.Size = new Size(96, 15);
             totalStartTimesLabel.TabIndex = 64;
             totalStartTimesLabel.Text = "Total Start Times:";
+            // 
+            // deleteAllStartTimeButton
+            // 
+            deleteAllStartTimeButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteAllStartTimeButton.Location = new Point(800, 357);
+            deleteAllStartTimeButton.Name = "deleteAllStartTimeButton";
+            deleteAllStartTimeButton.Size = new Size(73, 34);
+            deleteAllStartTimeButton.TabIndex = 68;
+            deleteAllStartTimeButton.Text = "Delete All";
+            deleteAllStartTimeButton.UseVisualStyleBackColor = true;
+            deleteAllStartTimeButton.Click += deleteAllStartTimeButton_Click;
+            // 
+            // deleteAllSemesterButton
+            // 
+            deleteAllSemesterButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteAllSemesterButton.Location = new Point(199, 357);
+            deleteAllSemesterButton.Name = "deleteAllSemesterButton";
+            deleteAllSemesterButton.Size = new Size(73, 34);
+            deleteAllSemesterButton.TabIndex = 69;
+            deleteAllSemesterButton.Text = "Delete All";
+            deleteAllSemesterButton.UseVisualStyleBackColor = true;
+            deleteAllSemesterButton.Click += deleteAllSemesterButton_Click;
+            // 
+            // deleteAllDayButton
+            // 
+            deleteAllDayButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteAllDayButton.Location = new Point(502, 357);
+            deleteAllDayButton.Name = "deleteAllDayButton";
+            deleteAllDayButton.Size = new Size(73, 34);
+            deleteAllDayButton.TabIndex = 70;
+            deleteAllDayButton.Text = "Delete All";
+            deleteAllDayButton.UseVisualStyleBackColor = true;
+            deleteAllDayButton.Click += deleteAllDayButton_Click;
+            // 
+            // printSemesterButton
+            // 
+            printSemesterButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            printSemesterButton.Location = new Point(72, 357);
+            printSemesterButton.Margin = new Padding(4);
+            printSemesterButton.Name = "printSemesterButton";
+            printSemesterButton.Size = new Size(73, 34);
+            printSemesterButton.TabIndex = 76;
+            printSemesterButton.Text = "Print Data";
+            printSemesterButton.UseVisualStyleBackColor = true;
+            printSemesterButton.Click += printSemesterButton_Click;
+            // 
+            // printDayButton
+            // 
+            printDayButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            printDayButton.Location = new Point(375, 357);
+            printDayButton.Margin = new Padding(4);
+            printDayButton.Name = "printDayButton";
+            printDayButton.Size = new Size(73, 34);
+            printDayButton.TabIndex = 77;
+            printDayButton.Text = "Print Data";
+            printDayButton.UseVisualStyleBackColor = true;
+            printDayButton.Click += printDayButton_Click;
+            // 
+            // printStartTimeButton
+            // 
+            printStartTimeButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            printStartTimeButton.Location = new Point(673, 357);
+            printStartTimeButton.Margin = new Padding(4);
+            printStartTimeButton.Name = "printStartTimeButton";
+            printStartTimeButton.Size = new Size(73, 34);
+            printStartTimeButton.TabIndex = 78;
+            printStartTimeButton.Text = "Print Data";
+            printStartTimeButton.UseVisualStyleBackColor = true;
+            printStartTimeButton.Click += printStartTimeButton_Click;
             // 
             // PeriodForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(933, 390);
+            ClientSize = new Size(933, 433);
+            Controls.Add(printStartTimeButton);
+            Controls.Add(printDayButton);
+            Controls.Add(printSemesterButton);
+            Controls.Add(deleteAllDayButton);
+            Controls.Add(deleteAllSemesterButton);
+            Controls.Add(deleteAllStartTimeButton);
             Controls.Add(totalStartTimeValueLabel);
             Controls.Add(totalStartTimesLabel);
             Controls.Add(totalDayValueLabel);
@@ -584,5 +665,11 @@
         private System.Windows.Forms.Label totalDaysLabel;
         private System.Windows.Forms.Label totalSemesterValueLabel;
         private System.Windows.Forms.Label totalSemestersLabel;
+        private Button deleteAllDayButton;
+        private Button deleteAllSemesterButton;
+        private Button deleteAllStartTimeButton;
+        private Button printStartTimeButton;
+        private Button printDayButton;
+        private Button printSemesterButton;
     }
 }
