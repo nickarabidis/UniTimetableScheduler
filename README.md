@@ -10,46 +10,64 @@ The software uses:
  - An Interface with Window Forms so it can be a user friendly and efficient tool.
 
 ## Features
+For each window there's the possibility of Adding, Updating, Deleting, Deleting All and Printing in a txt file, data from the database.
 
 Courses:
-- Add/Update and Delete a **Course** with its data.
+- Add/Update and Delete a **Course** with its data to/from the database.
+- Delete All **Course** data from the database.
+- Print **Course** data from the database.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/517b080f-a015-48f9-9fc8-c70540b424eb)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/f01cef81-9ce8-44bb-81d9-6ffa71b79b49)
+
 
 Professors:
-- Add/Update and Delete a **Professor** with its data.
+- Add/Update and Delete a **Professor** with its data to/from the database.
+- Delete All **Professor** data from the database.
+- Print **Professor** data from the database.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/766436c6-cf0d-4f24-a31c-8bab35ee5461)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/b5a5d482-f88f-4796-bbfc-bbfe66a3f2e5)
+
 
 Rooms:
-- Add/Update and Delete a **Room** with its data.
+- Add/Update and Delete a **Room** with its data to/from the database.
+- Delete All **Room** data from the database.
+- Print **Room** data from the database.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/c26e9492-1508-47f2-8fbd-e93201ffb9f3)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/523642a1-397c-4d6b-b6be-3e642d8c444a)
+
 
 Periods:
-- Add/Update and Delete a **Semester** with its data.
-- Add/Update and Delete a **Day** with its data.
-- Add/Update and Delete a **Start Time** with its data.
+- Add/Update and Delete a **Semester**/**Day**/**Start Time** with its data to/from the database.
+- Delete All **Semester**/**Day**/**Start Time** data from the database.
+- Print **Semester**/**Day**/**Start Time** data from the database.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/74c57c2d-eb36-498e-ae3b-b2a293f969e9)
-
-Dependencies:
-- Add/Update and Delete a **Dependency** with its data.
-
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/95fe951b-bc47-4b62-a11f-cb7f45b00501)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/b30abb96-346a-47c3-baf9-54e018e8c4a0)
 
 
 Preferences:
-- Add/Update and Delete a **Preferred Day** with its data.
-- Add/Update and Delete a **Preferred Start Time** with its data.
-- Add/Update and Delete a **Preferred Room** with its data.
+- Add/Update and Delete a **Preferred Day**/**Preferred Start Time**/**Preferred Room*** with its data to/from the database.
+- Delete All **Preferred Day**/**Preferred Start Time**/**Preferred Room*** data from the database.
+- Print **Preferred Day**/**Preferred Start Time**/**Preferred Room*** data from the database.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/8c217b95-4e92-4164-8980-d260464b93ca)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/80d36f86-198b-4faf-a84f-64b889b923b8)
+
+
+Dependencies:
+- Add/Update and Delete a **Dependency** with its data to/from the database.
+- Delete All **Dependency*** data from the database.
+- Print **Dependency*** data from the database.
+
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/23c0286a-025f-4b18-ae0f-7a01e66a7e28)
+
 
 Scheduler:
-- Add/Update and Delete a **Scheduler** with its data.
+- Add/Update and Delete a **Scheduler** with its data to/from the database.
+- Delete All **Dependency*** data from the database.
+- Print **Dependency*** data from the database.
+- Print All data from the database to one file.
+- Generate the timetable with the genetic algorithm.
 
-![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/dd334278-01ee-42b8-8f1e-645088475a2f)
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/fb017e0c-be9f-4742-81ac-473932ab8e9e)
 
 Generated Schedule:
 - Shows the generated schedule and the data.
