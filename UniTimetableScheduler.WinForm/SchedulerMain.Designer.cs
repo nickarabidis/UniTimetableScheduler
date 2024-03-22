@@ -35,8 +35,8 @@
             professorsToolStripMenuItem = new ToolStripMenuItem();
             roomsToolStripMenuItem = new ToolStripMenuItem();
             periodsToolStripMenuItem = new ToolStripMenuItem();
-            dependenciesToolStripMenuItem = new ToolStripMenuItem();
             preferencesToolStripMenuItem = new ToolStripMenuItem();
+            dependenciesToolStripMenuItem = new ToolStripMenuItem();
             schedulerToolStripMenuItem = new ToolStripMenuItem();
             statusStrip = new StatusStrip();
             toolStripStatusLabel = new ToolStripStatusLabel();
@@ -83,19 +83,19 @@
             periodsToolStripMenuItem.Text = "Periods";
             periodsToolStripMenuItem.Click += periodsToolStripMenuItem_Click;
             // 
-            // dependenciesToolStripMenuItem
-            // 
-            dependenciesToolStripMenuItem.Name = "dependenciesToolStripMenuItem";
-            dependenciesToolStripMenuItem.Size = new Size(93, 20);
-            dependenciesToolStripMenuItem.Text = "Dependencies";
-            dependenciesToolStripMenuItem.Click += dependenciesToolStripMenuItem_Click;
-            // 
             // preferencesToolStripMenuItem
             // 
             preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
             preferencesToolStripMenuItem.Size = new Size(80, 20);
             preferencesToolStripMenuItem.Text = "Preferences";
             preferencesToolStripMenuItem.Click += preferencesToolStripMenuItem_Click;
+            // 
+            // dependenciesToolStripMenuItem
+            // 
+            dependenciesToolStripMenuItem.Name = "dependenciesToolStripMenuItem";
+            dependenciesToolStripMenuItem.Size = new Size(93, 20);
+            dependenciesToolStripMenuItem.Text = "Dependencies";
+            dependenciesToolStripMenuItem.Click += dependenciesToolStripMenuItem_Click;
             // 
             // schedulerToolStripMenuItem
             // 
@@ -117,8 +117,8 @@
             // toolStripStatusLabel
             // 
             toolStripStatusLabel.Name = "toolStripStatusLabel";
-            toolStripStatusLabel.Size = new Size(39, 17);
-            toolStripStatusLabel.Text = "Status";
+            toolStripStatusLabel.Size = new Size(185, 17);
+            toolStripStatusLabel.Text = "Developed by Nikolaos Arampidis";
             // 
             // SchedulerMain
             // 

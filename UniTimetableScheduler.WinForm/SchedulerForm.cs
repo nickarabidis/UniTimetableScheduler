@@ -675,6 +675,7 @@ namespace Scheduler.WinForm
             GeneratedScheduleForm generatedTimetable = new GeneratedScheduleForm();
             generatedTimetable.Show();
 
+            //Developed by Nikolaos Arampidis
         }
 
 
