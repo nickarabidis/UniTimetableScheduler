@@ -619,8 +619,26 @@ namespace Scheduler.Model
                 {
                     while (reader.Read())
                     {
-                        bool attributeValue = reader.GetBoolean(0); // Assuming the attribute is in the first column
-                        lab = attributeValue;
+                        object value = reader.GetValue(0);
+
+                        if (value is bool)
+                        {
+                            lab = (bool)value;
+                        }
+                        else if (value is string)
+                        {
+                            if (value == "False")
+                            {
+                                lab = false;
+                            }
+                            else if (value == "True")
+                            {
+                                lab = true;
+                            }
+                        }
+                        //string attributeValue = reader.GetString(0); // Assuming the attribute is in the first column
+
+                        //lab = attributeValue;
                     }
                 }
             }
