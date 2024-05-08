@@ -22,7 +22,8 @@ The general requirements:
 - Course hours can begin from 8am and finish 22pm (8:00 - 22:00) so in total there are 14 hours for each day.
 - The days of the timetable are from Monday to Friday so in total there are 5 days per semester.
 - There are in total 4 semesters in the timetable.
-- The class rooms are divided into two categories the theory rooms and the laboratory rooms, for the respective courses.
+- The class rooms are divided into two categories, the theory rooms and the laboratory rooms, for the respective courses.
+- There are also teachers that have to attend assemblies, so they are also divided to assembly teachers and non-assembly teachers.
 
 The requirements used by the algorithm:
 - There shouldn't be overlapping with hours of theory courses in the same semester and there should be the possibility of overlapping hours with only two laboratory courses.
