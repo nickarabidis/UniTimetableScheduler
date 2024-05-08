@@ -9,6 +9,32 @@ The software uses:
  - A Database so the data of the courses, professors, semesters, days, start times, rooms and more are stored and used from there.
  - An Interface with Window Forms so it can be a user friendly and efficient tool.
 
+## General Software Operation
+You can see how the software works from the UI to the Genetic Algorithm to the Solution, from the below diagram.
+![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/421b7f22-f30d-45af-93f8-660f766ef730)
+
+The timetable chromosome is represented by a time slot for each hour, every semester and every day with a hash code (day * 14(total hours) * 4 + semester * 14(total hours) + time) and the maximum hashcode in the time slot is 280. 
+While the algorithm is running, it assigns the courses to those time slots from the start of the genetic algorithm until the solution.
+
+## Requirements
+The general requirements:
+- Course hours can begin from 8am and finish 22pm (8:00 - 22:00) so in total there are 14 hours for each day.
+- The days of the timetable are from Monday to Friday so in total there are 5 days per semester.
+- There are in total 4 semesters in the timetable.
+- The class rooms are divided into two categories the theory rooms and the laboratory rooms, for the respective courses.
+
+The requirements used by the algorithm:
+- There shouldn't be overlapping with hours of theory courses in the same semester and there should be the possibility of overlapping hours with only two laboratory courses.
+- There shouldn't be overlapping with hours of the teachers' lessons on the same day.
+- There shouldn't be overlapping with classroom hours that teach courses on the same day.
+- No class for assembly teachers on Thursday 10:00 – 12:00.
+- There is at least one free hour between 12:00 – 16:00 for all semesters every day.
+- There is at least one lesson per day to properly spread the lessons in the timetable.
+- It is possible to introduce a teachers' preference for a classroom, day, or start time.
+- It is possible to introduce a dependency between courses, to teach a teacher's courses on the same day, on different days, or on a number of days.
+  
+The requirements for this software are **Hard** requirements (they all need to be met without exception for a solution).
+
 ## Features
 For each window there's the possibility of Adding, Updating, Deleting, Deleting All and Printing in a txt file, data from the database.
 
