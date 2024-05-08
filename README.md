@@ -11,6 +11,7 @@ The software uses:
 
 ## General Software Operation
 You can see how the software works from the UI to the Genetic Algorithm to the Solution, from the below diagram.
+
 ![image](https://github.com/nickarabidis/UniTimetableScheduler/assets/75751845/421b7f22-f30d-45af-93f8-660f766ef730)
 
 The timetable chromosome is represented by a time slot for each hour, every semester and every day with a hash code (day * 14(total hours) * 4 + semester * 14(total hours) + time) and the maximum hashcode in the time slot is 280. 
